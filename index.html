@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4歳・5歳からのヤマハ音楽教室「ぷらいまりー」：耳の力を育む音楽レッスン</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base Styles */
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        h1, h2, h3, h4 {
+            color: #004d40; /* Dark Teal */
+            font-weight: 700;
+        }
+
+        h1 { font-size: 2.2em; text-align: center; margin-bottom: 0.5em; }
+        h2 { font-size: 1.8em; margin-bottom: 0.8em; }
+        h3 { font-size: 1.5em; margin-bottom: 0.6em; }
+        p { margin-bottom: 1em; }
+        a { color: #00796b; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: #e0f2f1; /* Light Teal */
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        header .logo {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        header p {
+            font-size: 1.1em;
+            color: #004d40;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Hero Section (First View) */
+        .hero {
+            background: linear-gradient(to bottom, #b2dfdb, #e0f2f1); /* Gradient */
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 2.5em;
+            color: #004d40;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        .hero p {
+            font-size: 1.2em;
+            color: #004d40;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        .hero .hero-image {
+            max-width: 80%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 60px 0;
+            background-color: #fff;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border-radius: 8px;
+        }
+        section:nth-of-type(even) {
+            background-color: #f0fdfc; /* Very light teal */
+        }
+        section h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        section h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: #00796b;
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Why Choose Now Section */
+        .why-choose .content-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .why-choose .grid-item {
+            flex: 1 1 calc(50% - 30px); /* 2 columns on larger screens */
+            min-width: 300px;
+            background-color: #e0f2f1;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .why-choose .grid-item h3 {
+            color: #004d40;
+            margin-top: 0;
+        }
+        .why-choose .grid-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        /* 動画セクション */
+        .video-section {
+            background-color: #f0fdfc;
+        }
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 アスペクト比 */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #000;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Course Details Section */
+        .course-details ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .course-details ul li {
+            background-color: #e0f2f1;
+            padding: 20px;
+            border-radius: 8px;
+            flex: 1 1 calc(33% - 20px);
+            min-width: 280px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .course-details .method-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+            justify-content: center;
+        }
+        .course-details .method-item {
+            flex: 1 1 calc(20% - 20px); /* 5 items per row */
+            min-width: 150px;
+            text-align: center;
+            padding: 15px;
+            background-color: #f0fdfc;
+            border-radius: 5px;
+            border: 1px solid #b2dfdb;
+        }
+        .course-details .method-item h4 {
+            color: #00796b;
+            margin: 0;
+            font-size: 1.1em;
+        }
+        .course-details .lesson-content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .course-details .lesson-content-item {
+            background-color: #e0f2f1;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .course-details .lesson-content-item img {
+            max-width: 100px;
+            margin-bottom: 10px;
+        }
+        .course-details .growth-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 40px;
+        }
+        .course-details .growth-table th,
+        .course-details .growth-table td {
+            border: 1px solid #b2dfdb;
+            padding: 12px;
+            text-align: left;
+        }
+        .course-details .growth-table th {
+            background-color: #00796b;
+            color: #fff;
+            font-weight: bold;
+        }
+        .course-details .growth-table td:first-child {
+            background-color: #f0fdfc;
+            font-weight: bold;
+            color: #004d40;
+        }
+
+        /* Lesson Forms Section */
+        .lesson-forms .form-option {
+            background-color: #e0f2f1;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .lesson-forms .form-option h3 {
+            color: #004d40;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.6em;
+        }
+        .lesson-forms .form-option ul {
+            list-style: disc;
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+        .lesson-forms .form-option ul li strong {
+            color: #00796b;
+        }
+
+        /* Support Section */
+        .support-section .support-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            background-color: #f0fdfc;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        .support-section .support-item img {
+            width: 80px;
+            height: auto;
+            flex-shrink: 0;
+        }
+        .support-section .support-item h3 {
+            margin: 0;
+            color: #004d40;
+        }
+        .support-section .support-item p {
+            margin: 0;
+        }
+        
+        /* コース概要セクション */
+        .course-summary-section {
+            background-color: #fff;
+        }
+        .tabs {
+            display: flex;
+            border-bottom: 3px solid #004d40;
+            margin-bottom: -1px;
+        }
+        .tab-link {
+            padding: 12px 25px;
+            cursor: pointer;
+            border: 1px solid #ddd;
+            border-bottom: none;
+            background-color: #f1f1f1;
+            font-size: 1.1em;
+            font-weight: 700;
+            border-radius: 8px 8px 0 0;
+            margin-right: 5px;
+            transition: background-color 0.3s, color 0.3s;
+            color: #666;
+        }
+        .tab-link.active {
+            background-color: #004d40;
+            color: #fff;
+            border-color: #004d40;
+        }
+        .tab-content {
+            border: 1px solid #ddd;
+            border-radius: 0 8px 8px 8px;
+            padding: 20px;
+            background-color: #fff;
+        }
+        .tab-pane {
+            display: none;
+        }
+        .tab-pane.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .detail-row {
+            display: flex;
+            padding: 25px 10px;
+            border-bottom: 1px solid #e0f2f1;
+            align-items: flex-start;
+        }
+        .detail-row:last-child {
+            border-bottom: none;
+        }
+        .detail-label {
+            flex-basis: 180px;
+            flex-shrink: 0;
+            font-weight: 700;
+            color: #004d40;
+            padding-right: 20px;
+            font-size: 1.1em;
+        }
+        .detail-label .label-sub {
+            font-size: 0.8em;
+            font-weight: normal;
+            color: #333;
+        }
+        .detail-content {
+            flex-grow: 1;
+        }
+        .detail-content p, .detail-content ul {
+            margin: 0;
+        }
+        .detail-content .note {
+            font-size: 0.9em;
+            color: #555;
+            margin-top: 10px;
+        }
+        .price-list {
+            list-style: none;
+            padding: 0;
+        }
+        .price-list li {
+            margin-bottom: 8px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .price-list li span {
+            min-width: 180px;
+        }
+        .materials-grid {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            margin-top: 10px;
+        }
+        .course-summary-section .material-item {
+            text-align: center;
+        }
+        .course-summary-section .material-item img {
+            max-width: 120px;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+            background: #fff;
+        }
+        .course-summary-section .material-item p {
+            margin-top: 8px;
+            font-size: 0.95em;
+        }
+
+        /* お客様の声セクション */
+        .testimonials-section {
+            background-color: #fff;
+        }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .testimonial-card {
+            background-color: #f0fdfc;
+            border: 2px solid #e0f2f1;
+            padding: 25px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+        }
+        .testimonial-card .quote {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            flex-grow: 1;
+            position: relative;
+            padding-left: 20px;
+        }
+        .testimonial-card .quote::before {
+            content: '“';
+            font-size: 3em;
+            color: #00796b;
+            position: absolute;
+            left: -10px;
+            top: -10px;
+            opacity: 0.5;
+        }
+        .testimonial-card .author {
+            text-align: right;
+            font-weight: bold;
+            color: #004d40;
+        }
+        .testimonial-card .author span {
+            display: block;
+            font-size: 0.9em;
+            font-weight: normal;
+            color: #333;
+        }
+
+        /* FAQ Section */
+        .faq-section .faq-item {
+            background-color: #e0f2f1;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .faq-section .faq-question {
+            display: block;
+            background-color: #00796b;
+            color: #fff;
+            padding: 18px 25px;
+            cursor: pointer;
+            font-weight: bold;
+            position: relative;
+            user-select: none;
+            transition: background-color 0.3s ease;
+        }
+        .faq-section .faq-question:hover {
+            background-color: #004d40;
+        }
+        .faq-section .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5em;
+            transition: transform 0.3s ease;
+        }
+        .faq-section .faq-question.active::after {
+            content: '-';
+            transform: translateY(-50%) rotate(0deg);
+        }
+        .faq-section .faq-answer {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+            background-color: #f9f9f9;
+        }
+        .faq-section .faq-answer.open {
+            max-height: 500px;
+            padding: 15px 25px;
+        }
+        .faq-section .faq-link {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .faq-section .faq-link a {
+            display: inline-block;
+            background-color: #00796b;
+            color: #fff;
+            padding: 12px 25px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .faq-section .faq-link a:hover {
+            background-color: #004d40;
+            text-decoration: none;
+        }
+
+        /* Access Section */
+        .access-section {
+            background-color: #fff;
+        }
+        .access-section .access-card {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            background-color: #f0fdfc;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            align-items: center;
+        }
+        .access-section .access-image {
+            flex: 1 1 300px;
+        }
+        .access-section .access-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .access-section .access-info {
+            flex: 2 1 400px;
+        }
+        .access-section .access-info h3 {
+            font-size: 1.6em;
+            color: #004d40;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        .access-section .access-info dl {
+            margin: 0;
+        }
+        .access-section .access-info dt {
+            font-weight: 700;
+            color: #004d40;
+            margin-top: 15px;
+        }
+        .access-section .access-info dd {
+            margin: 5px 0 0 0;
+        }
+        .access-section .access-info .highlight {
+            color: #00796b;
+            font-weight: bold;
+        }
+
+        /* CTAセクション (中間・最下部共通) */
+        .cta-section {
+            background-color: #f0fdfc;
+            color: #333;
+            padding: 40px 20px;
+            text-align: center;
+            margin: 0 auto 20px;
+            border-radius: 8px;
+        }
+        .cta-section h2 {
+            color: #004d40;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        .cta-section p {
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 30px;
+        }
+        .cta-section .cta-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .cta-section .cta-buttons a {
+            display: inline-block;
+            background-color: #ff9800;
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            text-decoration: none;
+        }
+        .cta-section .cta-buttons a:hover {
+            background-color: #f57c00;
+            transform: translateY(-3px);
+            text-decoration: none;
+        }
+        .cta-section .cta-buttons a.phone-button {
+            background-color: #00796b;
+        }
+        .cta-section .cta-buttons a.phone-button:hover {
+            background-color: #004d40;
+        }
+        .cta-section .cta-buttons a .phone-note {
+            display: block;
+            font-size: 0.7em;
+            font-weight: normal;
+            margin-top: 4px;
+            line-height: 1.2;
+        }
+
+        /* 最下部CTAの個別スタイル */
+        .cta-bottom {
+            background-color: #004d40;
+            color: #fff;
+        }
+        .cta-bottom h2 {
+            color: #fff;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #263238;
+            color: #eceff1;
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 0.9em;
+        }
+        footer .footer-links a {
+            color: #80cbc4;
+            margin: 0 10px;
+        }
+        footer .social-links img {
+            width: 30px;
+            height: 30px;
+            margin: 0 8px;
+            vertical-align: middle;
+        }
+        footer p {
+            margin-top: 20px;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            h1 { font-size: 1.8em; }
+            h2 { font-size: 1.5em; }
+            h3 { font-size: 1.3em; }
+
+            .hero { padding: 40px 15px; }
+            .hero h1 { font-size: 2em; }
+            .hero p { font-size: 1em; }
+
+            .why-choose .grid-item {
+                flex: 1 1 100%;
+            }
+            .course-details ul li,
+            .course-details .method-item {
+                flex: 1 1 100%;
+            }
+            .course-details .lesson-content-grid {
+                grid-template-columns: 1fr;
+            }
+            .support-section .support-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            .support-section .support-item img {
+                margin-bottom: 10px;
+            }
+            
+            .cta-section .cta-buttons a {
+                width: 100%;
+                box-sizing: border-box;
+                font-size: 1.1em;
+            }
+            
+            .access-section .access-card {
+                flex-direction: column;
+                padding: 20px;
+            }
+            .access-section .access-info {
+                text-align: center;
+            }
+            
+            /* コース概要レスポンシブ */
+            .detail-row {
+                flex-direction: column;
+            }
+            .detail-label {
+                flex-basis: auto;
+                margin-bottom: 15px;
+                padding-right: 0;
+            }
+            .price-list li span {
+                min-width: 150px;
+                margin-bottom: 5px;
+            }
+            .materials-grid {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container { padding: 15px; }
+            section { padding: 40px 0; }
+            .hero h1 { font-size: 1.6em; }
+            .hero p { font-size: 0.9em; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== ヘッダーセクション ===== -->
+    <header>
+        <div class="container">
+            <img src="image/logo.png" alt="ヤマハ音楽教室ロゴ" class="logo">
+            <p>音楽の力が一番伸びる時期に、最高の音楽教育を。4・5歳のための「ぷらいまりー」コース。</p>
+        </div>
+    </header>
+
+    <main>
+        <!-- ===== ヒーローセクション ===== -->
+        <section class="hero">
+            <div class="container">
+                <h1>4歳・5歳は、耳の力がぐんと伸びる「聴覚の発達のゴールデンエイジ」。<br>この大切な時期に、豊かな音楽体験を。</h1>
+                <p>「きく」力が最も伸びるこの時期に、質の高い音楽を「きき」、それを「うたい」「ひく」経験を重ねることで、音楽の基礎となる力が自然に身につきます。将来のびやかな自己表現ができる力へとつながります。</p>
+                <img src="image/prm-08_dl.jpg" alt="4歳と5歳の子供たちが楽しそうに音楽を学ぶ様子" class="hero-image">
+            </div>
+        </section>
+
+        <!-- ===== 中間CTAセクション 1 ===== -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>さっそく、音楽の世界を体験してみませんか？</h2>
+                <p>Webフォームまたはお電話で、お気軽に体験レッスン・見学をお申し込みください。</p>
+                <div class="cta-buttons">
+                    <a href="https://www.toriimusic.co.jp/18539/" class="button">Webで体験レッスンを予約</a>
+                    <a href="tel:0740-22-2063" class="button phone-button">電話でお問い合わせ<span class="phone-note">(タップして発信)</span></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 「なぜ選ぶべきか」セクション ===== -->
+        <section class="why-choose">
+            <div class="container">
+                <h2>なぜ今、4・5歳で「ぷらいまりー」を選ぶべきなの？</h2>
+                <div class="content-grid">
+                    <div class="grid-item">
+                        <h3>耳の力が完成に近づく「ゴールデンエイジ」</h3>
+                        <p>4・5歳は、聴覚の発達が著しい時期。聞いた音楽を注意深く聴きわけたり、ドレミで歌ったりすることができるようになります。この大切な時期に合わせたレッスンで、音楽の力を最大限に引き出します。</p>
+                        <img src="image/prm-29_dl.jpg" alt="子供の聴覚発達イメージ">
+                    </div>
+                    <div class="grid-item">
+                        <h3>「弾く」だけじゃない、総合音楽力と「こころ」の成長</h3>
+                        <p>ヤマハでは「きく→うたう→ひく→よむ→つくる」という総合的なアプローチで、音楽を自分の言葉のように使いこなせる力を育みます。お友達とのアンサンブルを通して、協調性や社会性といった「非認知能力」も豊かに育ちます。</p>
+                        <img src="image/prm-18_dl.jpg" alt="友達とアンサンブルする子供たち">
+                    </div>
+                    <div class="grid-item">
+                        <h3>質の高い講師陣</h3>
+                        <p>ヤマハ独自の認定講師資格試験に合格し、幅広い音楽知識や、幼児とのコミュニケーション力に長けた講師が指導します。</p>
+                        <img src="image/prm-03_dl.jpg" alt="ヤマハ認定講師のイメージ">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ===== 動画セクション ===== -->
+        <section class="video-section">
+            <div class="container">
+                <h2>実際のレッスンの様子を動画でご覧ください</h2>
+                <div class="video-wrapper">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/7h1UTOnlK-g?si=zBO-jXOg25-wvFL2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== コース詳細セクション ===== -->
+        <section class="course-details">
+            <div class="container">
+                <h2>「ぷらいまりー」（4・5歳コース）ってどんなレッスン？</h2>
+                <ul>
+                    <li>
+                        <h3>対象年齢</h3>
+                        <p><strong>4歳（年中）・5歳（年長）</strong>。2025年度開講クラスは2019年4月2日～2021年4月1日生まれのお子様が対象です。</p>
+                    </li>
+                    <li>
+                        <h3>期間</h3>
+                        <p><strong>2年間</strong>かけて総合的な音楽の基礎力を育みます。</p>
+                    </li>
+                    <li>
+                        <h3>レッスン形態</h3>
+                        <p><strong>グループレッスン</strong>。お友達と一緒だから楽しく、刺激しあいながら成長できます。</p>
+                    </li>
+                </ul>
+
+                <h3>ヤマハ独自の「きく→うたう→ひく→よむ→つくる」メソッド</h3>
+                <p>音楽を聴くだけでなく、歌い、弾き、楽譜を読み、そして簡単な作曲（つくる）まで体験することで、音楽を深く理解し、自分を表現する力を養います。</p>
+                <div class="method-grid">
+                    <div class="method-item"><h4>きく</h4></div>
+                    <div class="method-item"><h4>うたう</h4></div>
+                    <div class="method-item"><h4>ひく</h4></div>
+                    <div class="method-item"><h4>よむ</h4></div>
+                    <div class="method-item"><h4>つくる</h4></div>
+                </div>
+
+                <h3>レッスン内容の具体例</h3>
+                <div class="lesson-content-grid">
+                    <div class="lesson-content-item">
+                        <img src="image/prm-10_dl.jpg" alt="ソルフェージュのアイコン">
+                        <h4>きく・うたう（ソルフェージュ）</h4>
+                        <p>ドレミで歌うことで音感を育て、先生の伴奏を聴いて歌うことでハーモニー感覚を養います。</p>
+                    </div>
+                    <div class="lesson-content-item">
+                        <img src="image/prm-19_dl.jpg" alt="アンサンブルのアイコン">
+                        <h4>ひく（アンサンブル）</h4>
+                        <p>お友達と一緒にエレクトーンでアンサンブル。リズム感や協調性が自然と身につきます。</p>
+                    </div>
+                    <div class="lesson-content-item">
+                        <img src="image/prm-04_dl.jpg" alt="鑑賞のアイコン">
+                        <h4>鑑賞</h4>
+                        <p>オーケストラの曲など、さまざまな音楽を聴き、イメージを広げ、感受性を豊かにします。</p>
+                    </div>
+                    <div class="lesson-content-item">
+                        <img src="image/prm-10_dl.jpg" alt="楽譜読みのアイコン">
+                        <h4>よむ</h4>
+                        <p>歌ったり弾いたりした曲を楽譜で確認。体験と楽譜を結びつけ、読譜力を育てます。</p>
+                    </div>
+                </div>
+
+                <h3>2年間での成長ステップ</h3>
+                <table class="growth-table">
+                    <thead>
+                        <tr>
+                            <th>チカラ</th>
+                            <th>1年後</th>
+                            <th>2年後</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>きくチカラ</td>
+                            <td>メロディーや伴奏を聴き分け、音楽の表情（明るい、悲しいなど）を感じ取れるようになります。</td>
+                            <td>複数声部のハーモニーや、さまざまな楽器の音色を聴き分けられるようになります。</td>
+                        </tr>
+                        <tr>
+                            <td>うたうチカラ</td>
+                            <td>覚えた曲を歌詞やドレミで、豊かな表現で歌えるようになります。</td>
+                            <td>お友達の歌声を聴きながら、きれいなハーモニーを意識して歌えるようになります。</td>
+                        </tr>
+                        <tr>
+                            <td>ひくチカラ</td>
+                            <td>ドレミの五指奏を中心に、両手でレパートリー曲が弾けるようになります。</td>
+                            <td>左手で伴奏をつけながら、表情豊かに曲を演奏できるようになります。</td>
+                        </tr>
+                        <tr>
+                            <td>よむチカラ</td>
+                            <td>歌ったり弾いたりした曲の楽譜を、目で追いながら理解できるようになります。</td>
+                            <td>五線譜のドレミを読み、簡単な曲なら初見で弾けるようになります。</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="note">※2年間の音楽的成長の目安であり、個人差があります。一人一人の成長に合わせた指導を行っていきます。</p>
+            </div>
+        </section>
+
+        <!-- ===== レッスン形態セクション ===== -->
+        <section class="lesson-forms">
+            <div class="container">
+                <h2>お友達と一緒だから楽しい！グループレッスン</h2>
+                <div class="form-option">
+                    <h3>グループレッスン（月3回、60分/回）</h3>
+                    <ul>
+                        <li><strong>豊かな協調性を育む:</strong> お友達と一緒に音楽を奏でることで、一体感や喜びを分かち合えます。他の子の演奏を聴くことで良い刺激を受け、「もっと上手になりたい！」という意欲が自然と湧き上がります。</li>
+                        <li><strong>音楽の総合力を伸ばす:</strong> アンサンブルや歌など、グループだからこそできる多彩な活動を通して、リズム感、音感、ハーモニー感といった音楽の基礎をバランスよく育てます。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== サポートセクション ===== -->
+        <section class="support-section">
+            <div class="container">
+                <h2>ご家庭でのサポートと保護者の皆様へ</h2>
+                <div class="support-item">
+                    <img src="image/prm-24_dl.jpg" alt="保護者同伴のアイコン">
+                    <div>
+                        <h3>保護者の同伴について</h3>
+                        <p>レッスンには保護者の方にもご同伴いただきます。お子様の成長を間近で見守り、ご家庭での練習もサポートしていただくことで、お子様の意欲と上達につながります。</p>
+                    </div>
+                </div>
+                <div class="support-item">
+                    <img src="image/feature04.png" alt="家庭学習サポートのアイコン">
+                    <div>
+                        <h3>充実した家庭学習サポート</h3>
+                        <p>レッスンで習った曲を繰り返し聴けるDVDや、ご家庭での練習をサポートする教材をご用意しています。音楽に親しむ習慣が、お子様の力を大きく伸ばします。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== コース概要セクション ===== -->
+        <section class="course-summary-section">
+            <div class="container">
+                <h2>コース概要・料金</h2>
+                
+                <div class="tabs">
+                    <button class="tab-link active" data-tab="primary">ぷらいまりー</button>
+                    <button class="tab-link" data-tab="primary-personal">ぷらいまりー（パーソナル）</button>
+                </div>
+
+                <div class="tab-content">
+                    <!-- ぷらいまりーコースのコンテンツ -->
+                    <div id="primary" class="tab-pane active">
+                        <div class="detail-row">
+                            <div class="detail-label">対象年齢</div>
+                            <div class="detail-content">
+                                <p><strong>4・5歳（年中・年長）</strong></p>
+                                <p class="note">&lt;2025年度開講クラス&gt; 2019.4.2～2021.4.1生まれ</p>
+                            </div>
+                        </div>
+                        <div class="detail-row">
+                            <div class="detail-label">期間</div>
+                            <div class="detail-content"><p><strong>2年間</strong></p></div>
+                        </div>
+                        <div class="detail-row">
+                            <div class="detail-label">レッスン形態<br><span class="label-sub">(推奨)</span></div>
+                            <div class="detail-content">
+                                <p><strong>グループ レッスン + 個人 レッスン</strong></p>
+                                <p class="note">グループレッスン：月3回 / 個人レッスン：月0回～3回より選択</p>
+                                <p class="note">※「グループ＋個人月1回」を推奨としますが、個人レッスンの回数はご希望に応じてお選びいただけます。</p>
+                            </div>
+                        </div>
+                        <div class="detail-row">
+                            <div class="detail-label">レッスン時間</div>
+                            <div class="detail-content">
+                                <p>グループレッスン：1回 50分<br>個人レッスン：1回 20分</p>
+                                <p class="note">※教室の入れ替え時間を含みます。</p>
+                            </div>
+                        </div>
+                        <div class="detail-row">
+                            <div class="detail-label">レッスン料<br><span class="label-sub">(月額・税込)</span></div>
+                            <div class="detail-content">
+                                <ul class="price-list">
+                                    <li><span>グループのみ:</span><strong>7,700円</strong> または <strong>8,250円</strong></li>
+                                    <li><span>グループ + 個人月1回:</span><strong>9,680円 ～ 10,560円</strong></li>
+                                    <li><span>グループ + 個人月2回:</span><strong>11,660円 ～ 12,540円</strong></li>
+                                    <li><span>グループ + 個人月3回:</span><strong>13,640円 ～ 14,740円</strong></li>
+                                </ul>
+                                <p class="note">※レッスン料は平日・土日の受講曜日によって異なります。</p>
+                                <p class="note">※レッスン料には、専用サイト(LMS)の利用料を含みます。CDの販売はございません。</p>
+                                <p class="note">※個人レッスンの回数や時間は、会場や曜日によりご希望に沿えない場合がございます。</p>
+                            </div>
+                        </div>
+                        <div class="detail-row">
+                            <div class="detail-label">入会時教材費<br><span class="label-sub">(税込)</span></div>
+                            <div class="detail-content">
+                                <div class="materials-grid">
+                                    <div class="material-item">
+                                        <img src="image/overview_photo_01.png" alt="テキストの画像">
+                                        <p>テキスト<strong>2,640円</strong></p>
+                                    </div>
+                                    <div class="material-item">
+                                        <img src="image/bagoverview_photo_02.png" alt="レッスンバッグの画像">
+                                        <p>レッスンバッグ <strong>2,200円</strong></p>
+                                    </div>
+                                </div>
+                                <p class="note">※テキスト(2,640円)は半年ごとにお買い求めいただきます。</p>
+                            </div>
+                        </div>
+                         <div class="detail-row">
+                            <div class="detail-label">入会金・施設費</div>
+                            <div class="detail-content">
+                                 <p>入会金：5,500円<br>施設費：<strong>770円</strong> (月額)</p>
+                            </div>
+                        </div>
+                        <div class="detail-row">
+                            <div class="detail-label">保護者の同伴</div>
+                            <div class="detail-content">
+                                <p>ぷらいまりー2の前半は保護者の方同伴のレッスンとなりますが、後半からはお子さまの自立を意識したレッスンに徐々にシフトし、ぷらいまりー3からは任意となります。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- [更新済み] ぷらいまりー（パーソナル）コースのコンテンツ -->
+                    <div id="primary-personal" class="tab-pane">
+                        <div class="detail-row">
+                            <div class="detail-label">対象年齢</div>
+                            <div class="detail-content">
+                                <p><strong>4・5歳（年中・年長）</strong></p>
+                                <p class="note">※2019年4月2日～2021年4月1日生まれ</p>
+                            </div>
+                        </div>
+                        <div class="detail-row">
+                            <div class="detail-label">期間</div>
+                            <div class="detail-content"><p><strong>2年間</strong></p></div>
+                        </div>
+                        <div class="detail-row">
+                            <div class="detail-label">レッスン形態</div>
+                            <div class="detail-content">
+                                <p><strong>個人レッスン 月3回</strong></p>
+                                <p class="note">※楽器はピアノまたはエレクトーンよりお選びいただけます。</p>
+                            </div>
+                        </div>
+                        <div class="detail-row">
+                            <div class="detail-label">レッスン時間</div>
+                            <div class="detail-content">
+                                <p><strong>1回 30分</strong></p>
+                            </div>
+                        </div>
+                        <div class="detail-row">
+                            <div class="detail-label">レッスン料<br><span class="label-sub">(月額・税込)</span></div>
+                            <div class="detail-content">
+                                <ul class="price-list">
+                                    <li><strong>9,900円</strong> または <strong>10,450円</strong></li>
+                                </ul>
+                                <p class="note">※レッスン料は平日・土日の受講曜日によって異なります。</p>
+                                <p class="note">※レッスン料には、専用サイト(LMS)の利用料を含みます。CDの販売はございません。</p>
+                            </div>
+                        </div>
+                        <div class="detail-row">
+                            <div class="detail-label">入会時教材費<br><span class="label-sub">(税込)</span></div>
+                            <div class="detail-content">
+                                <div class="materials-grid">
+                                    <div class="material-item">
+                                        <img src="image/overview_photo_01.png" alt="テキストの画像">
+                                        <p>テキスト <strong>2,640円</strong></p>
+                                    </div>
+                                    <div class="material-item">
+                                        <img src="image/bagoverview_photo_02.png" alt="レッスンバッグの画像">
+                                        <p>レッスンバッグ <strong>2,200円</strong></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="detail-row">
+                            <div class="detail-label">入会金・施設費</div>
+                            <div class="detail-content">
+                                 <p>入会金：5,500円<br>施設費：<strong>770円</strong> (月額)</p>
+                            </div>
+                        </div>
+                        <div class="detail-row">
+                            <div class="detail-label">保護者の同伴</div>
+                            <div class="detail-content">
+                                <p>ぷらいまりー2の前半は保護者の方にご同伴いただきますが、後半からはお子さまの自立を意識したレッスンに徐々にシフトし、ぷらいまりー3からは任意となります。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== お客様の声セクション ===== -->
+        <section class="testimonials-section">
+            <div class="container">
+                <h2>実際に通われている保護者の皆様の声</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <p class="quote">初めは恥ずかしがっていましたが、お友達とアンサンブルをするのが楽しいようで、今では毎週のレッスンを心待ちにしています。家でもドレミで歌うことが増えました。</p>
+                        <p class="author">A.S様 <span>（5歳 女の子の保護者）</span></p>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="quote">ただピアノを弾くだけでなく、「きく」「うたう」といった総合的なレッスンのおかげか、リズム感や音感がすごく良くなったと感じます。先生も優しくて安心です。</p>
+                        <p class="author">K.T様 <span>（4歳 男の子の保護者）</span></p>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="quote">他の子と合わせる経験を通して、協調性も育まれているように感じます。音楽を通して、子どもの新しい一面を発見できました。</p>
+                        <p class="author">M.Y様 <span>（5歳 男の子の保護者）</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 中間CTAセクション 2 ===== -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>料金や内容にご納得いただけましたら、<br>ぜひ一度、教室の雰囲気を見に来てください！</h2>
+                <p>Webフォームまたはお電話で、お気軽に体験レッスン・見学をお申し込みください。</p>
+                <div class="cta-buttons">
+                    <a href="https://www.toriimusic.co.jp/18539/" class="button">Webで体験レッスンを予約</a>
+                    <a href="tel:0740-22-2063" class="button phone-button">電話でお問い合わせ<span class="phone-note">(タップして発信)</span></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FAQセクション ===== -->
+        <section class="faq-section">
+            <div class="container">
+                <h2>よくある質問（FAQ）</h2>
+                <div class="faq-item">
+                    <div class="faq-question">楽器の経験が全くありませんが、大丈夫ですか？</div>
+                    <div class="faq-answer">
+                        <p>はい、ご安心ください。このコースは、ほとんどのお子さまが初めて本格的な音楽レッスンを受けることを前提としています。「きく」ことから自然に音楽に親しみ、無理なく「うたう」「ひく」へとステップアップしていくカリキュラムですので、楽しくご参加いただけます。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">ヤマハで習うと、なぜ良いのですか？</div>
+                    <div class="faq-answer">
+                        <p>ヤマハでは、長年の研究に基づいた独自のカリキュラムで、演奏技術だけでなく、音感、リズム感、ハーモニー感、読譜、創作といった「総合的な音楽力」をバランスよく育みます。この基礎力が、将来どんな音楽を演奏する上でも大きな力となります。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">宿題はありますか？</div>
+                    <div class="faq-answer">
+                        <p>ご家庭で教材のDVDを見たり、CDを聴いたり、レッスンで習った曲を少し弾いてみる、といった簡単な「復習」をお願いしています。ご家庭で音楽に触れる時間を持つことが、お子様の成長を大きく後押しします。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">家庭には、どんな楽器を用意したらいいですか？</div>
+                    <div class="faq-answer">
+                        <p>ご家庭での練習のために、鍵盤楽器をご用意いただくことをお勧めします。豊かな表現力や正しい音程感を養うためには、アコースティックピアノや、鍵盤のタッチがピアノに近い電子ピアノ、エレクトーンなどが理想的です。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">レッスンに保護者の付き添いは必要ですか？</div>
+                    <div class="faq-answer">
+                        <p>はい、このコースでは保護者の方にご同伴いただいています。お子様が安心してレッスンに集中できるだけでなく、保護者の方にもレッスンの内容をご理解いただくことで、ご家庭での練習がよりスムーズになります。お子様の成長を一緒に見守り、喜びを分-ち合える貴重な時間となります。</p>
+                    </div>
+                </div>
+                <div class="faq-link">
+                    <a href="https://school.jp.yamaha.com/music/faq/">その他のよくある質問はこちら</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== アクセスセクション ===== -->
+        <section class="access-section">
+            <div class="container">
+                <h2>教室のご案内</h2>
+                <div class="access-card">
+                    <div class="access-image">
+                        <img src="http://toriimusic.co.jp/wp/wp-content/uploads/2018/10/1450601834883-300x225.jpg" alt="大津わにセンターの外観">
+                    </div>
+                    <div class="access-info">
+                        <h3>大津わにセンター</h3>
+                        <dl>
+                            <dt>所在地</dt>
+                            <dd>
+                                〒520-0522 滋賀県大津市和迩中浜366<br>
+                                <a href="https://www.google.com/maps/search/?api=1&query=滋賀県大津市和迩中浜366" target="_blank" rel="noopener noreferrer">▶︎ Googleマップで見る</a>
+                            </dd>
+                            <dt>アクセス</dt>
+                            <dd>
+                                JR湖西線 和邇駅より徒歩1分<br>
+                                <span class="highlight">駐車場</span>：あり
+                            </dd>
+                            <dt>電話番号</dt>
+                            <dd>0740-22-2063</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 最下部CTAセクション ===== -->
+        <section class="cta-section cta-bottom">
+            <div class="container">
+                <h2>まずはお子様の可能性を体験！</h2>
+                <div class="cta-buttons">
+                    <a href="https://www.toriimusic.co.jp/18539/" class="button">無料体験レッスン・レッスン見学を予約する</a>
+                </div>
+                <p>無料体験レッスン・レッスン見学 プレゼントキャンペーン実施中！</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== フッター ===== -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Yamaha Music School. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                button.classList.toggle('active');
+                if (answer.classList.contains('open')) {
+                    answer.classList.remove('open');
+                    answer.style.maxHeight = '0';
+                    answer.style.padding = '0 25px';
+                } else {
+                    answer.classList.add('open');
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                    answer.style.padding = '15px 25px';
+                }
+            });
+        });
+
+        // Tab functionality
+        document.querySelectorAll('.tab-link').forEach(button => {
+            button.addEventListener('click', () => {
+                const tabContainer = button.closest('.course-summary-section');
+                const tabName = button.dataset.tab;
+
+                tabContainer.querySelectorAll('.tab-link').forEach(tab => {
+                    tab.classList.remove('active');
+                });
+                tabContainer.querySelectorAll('.tab-pane').forEach(pane => {
+                    pane.classList.remove('active');
+                });
+
+                button.classList.add('active');
+                tabContainer.querySelector(`#${tabName}`).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
