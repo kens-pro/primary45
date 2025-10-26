@@ -7,705 +7,245 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
     <style>
         /* Base Styles */
-        body {
-            font-family: 'Noto Sans JP', sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f9f9f9;
+        *{box-sizing:border-box}
+        body{
+            font-family:'Noto Sans JP',sans-serif;
+            margin:0; line-height:1.6; color:#333; background:#f9f9f9;
         }
-
-        h1, h2, h3, h4 {
-            color: #004d40; /* Dark Teal */
-            font-weight: 700;
-        }
-
-        h1 { font-size: 2.2em; text-align: center; margin-bottom: 0.5em; }
-        h2 { font-size: 1.8em; margin-bottom: 0.8em; }
-        h3 { font-size: 1.5em; margin-bottom: 0.6em; }
-        p { margin-bottom: 1em; }
-        a { color: #00796b; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+        h1,h2,h3,h4{color:#004d40;font-weight:700}
+        h1{font-size:2.2em;text-align:center;margin-bottom:.5em}
+        h2{font-size:1.8em;margin-bottom:.8em}
+        h3{font-size:1.5em;margin-bottom:.6em}
+        p{margin-bottom:1em}
+        a{color:#00796b;text-decoration:none}
+        a:hover{text-decoration:underline}
+        .container{max-width:1200px;margin:0 auto;padding:20px}
 
         /* Header */
-        header {
-            background-color: #e0f2f1; /* Light Teal */
-            padding: 20px 0;
-            text-align: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        header{
+            background:#e0f2f1;padding:20px 0;text-align:center;
+            box-shadow:0 2px 4px rgba(0,0,0,.1);
         }
-        header .logo {
-            max-width: 200px;
-            height: auto;
-            margin-bottom: 10px;
+        header .logo{max-width:200px;height:auto;margin-bottom:10px}
+        header p{font-size:1.1em;color:#004d40;max-width:800px;margin:0 auto}
+
+        /* Hero */
+        .hero{
+            background:linear-gradient(to bottom,#b2dfdb,#e0f2f1);
+            padding:60px 20px;text-align:center;
         }
-        header p {
-            font-size: 1.1em;
-            color: #004d40;
-            max-width: 800px;
-            margin: 0 auto;
+        .hero h1{font-size:2.5em;color:#004d40;margin-bottom:20px;line-height:1.3}
+        .hero p{font-size:1.2em;color:#004d40;max-width:800px;margin:0 auto 30px}
+        .hero .hero-image{
+            max-width:80%;height:auto;border-radius:10px;box-shadow:0 4px 8px rgba(0,0,0,.2);
         }
 
-        /* Hero Section (First View) */
-        .hero {
-            background: linear-gradient(to bottom, #b2dfdb, #e0f2f1); /* Gradient */
-            padding: 60px 20px;
-            text-align: center;
+        /* Section */
+        section{
+            padding:60px 0;background:#fff;margin-bottom:20px;
+            box-shadow:0 2px 5px rgba(0,0,0,.05);border-radius:8px;
         }
-        .hero h1 {
-            font-size: 2.5em;
-            color: #004d40;
-            margin-bottom: 20px;
-            line-height: 1.3;
-        }
-        .hero p {
-            font-size: 1.2em;
-            color: #004d40;
-            max-width: 800px;
-            margin: 0 auto 30px;
-        }
-        .hero .hero-image {
-            max-width: 80%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        section:nth-of-type(even){background:#f0fdfc}
+        section h2{text-align:center;margin-bottom:40px;position:relative}
+        section h2::after{
+            content:'';display:block;width:80px;height:4px;background:#00796b;
+            margin:10px auto 0;border-radius:2px;
         }
 
-        /* Section Styling */
-        section {
-            padding: 60px 0;
-            background-color: #fff;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            border-radius: 8px;
+        /* Grid blocks */
+        .why-choose .content-grid{
+            display:flex;flex-wrap:wrap;gap:30px;justify-content:center;align-items:flex-start;
         }
-        section:nth-of-type(even) {
-            background-color: #f0fdfc; /* Very light teal */
+        .why-choose .grid-item{
+            flex:1 1 calc(50% - 30px);min-width:300px;background:#e0f2f1;padding:30px;border-radius:8px;
+            box-shadow:0 2px 4px rgba(0,0,0,.1);
         }
-        section h2 {
-            text-align: center;
-            margin-bottom: 40px;
-            position: relative;
+        .why-choose .grid-item img{max-width:100%;height:auto;border-radius:5px;margin-bottom:15px}
+
+        /* Video */
+        .video-wrapper{
+            position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%;
+            background:#000;border-radius:8px;box-shadow:0 4px 10px rgba(0,0,0,.2);
         }
-        section h2::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background-color: #00796b;
-            margin: 10px auto 0;
-            border-radius: 2px;
+        .video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%}
+
+        /* Course Details */
+        .course-details ul{
+            list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;justify-content:center;gap:20px;
+        }
+        .course-details ul li{
+            background:#e0f2f1;padding:20px;border-radius:8px;flex:1 1 calc(33% - 20px);min-width:280px;
+            box-shadow:0 2px 4px rgba(0,0,0,.1);
+        }
+        .method-grid{
+            display:flex;flex-wrap:wrap;gap:20px;margin-top:30px;justify-content:center;
+        }
+        .method-item{
+            flex:1 1 calc(20% - 20px);min-width:150px;text-align:center;padding:15px;
+            background:#f0fdfc;border-radius:5px;border:1px solid #b2dfdb;
+        }
+        .method-item h4{color:#00796b;margin:0;font-size:1.1em}
+
+        .lesson-content-grid{
+            display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:20px;margin-top:40px;
+        }
+        .lesson-content-item{
+            background:#e0f2f1;padding:20px;border-radius:8px;box-shadow:0 2px 4px rgba(0,0,0,.1);text-align:center;
+        }
+        .lesson-content-item img{max-width:100px;margin-bottom:10px}
+
+        .growth-table{width:100%;border-collapse:collapse;margin-top:40px}
+        .growth-table th,.growth-table td{border:1px solid #b2dfdb;padding:12px;text-align:left}
+        .growth-table th{background:#00796b;color:#fff;font-weight:bold}
+        .growth-table td:first-child{background:#f0fdfc;font-weight:bold;color:#004d40}
+
+        /* Forms/Support */
+        .lesson-forms .form-option{
+            background:#e0f2f1;padding:30px;border-radius:8px;margin-bottom:30px;box-shadow:0 2px 5px rgba(0,0,0,.1);
+        }
+        .support-item{
+            display:flex;align-items:center;gap:20px;margin-bottom:30px;background:#f0fdfc;padding:20px;border-radius:8px;
+            box-shadow:0 1px 3px rgba(0,0,0,.05);
+        }
+        .support-item img{width:80px;height:auto;flex-shrink:0}
+
+        /* Tabs (Course summary) */
+        .tabs{display:flex;border-bottom:3px solid #004d40;margin-bottom:-1px}
+        .tab-link{
+            padding:12px 25px;cursor:pointer;border:1px solid #ddd;border-bottom:none;background:#f1f1f1;
+            font-size:1.1em;font-weight:700;border-radius:8px 8px 0 0;margin-right:5px;transition:.3s;color:#666;
+        }
+        .tab-link.active{background:#004d40;color:#fff;border-color:#004d40}
+        .tab-content{border:1px solid #ddd;border-radius:0 8px 8px 8px;padding:20px;background:#fff}
+        .tab-pane{display:none}
+        .tab-pane.active{display:block;animation:fadeIn .5s}
+        @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+        .detail-row{display:flex;padding:25px 10px;border-bottom:1px solid #e0f2f1;align-items:flex-start}
+        .detail-row:last-child{border-bottom:none}
+        .detail-label{flex-basis:180px;flex-shrink:0;font-weight:700;color:#004d40;padding-right:20px;font-size:1.1em}
+        .label-sub{font-size:.8em;font-weight:normal;color:#333}
+        .detail-content{flex-grow:1}
+        .detail-content .note{font-size:.9em;color:#555;margin-top:10px}
+        .price-list{list-style:none;padding:0}
+        .price-list li{margin-bottom:8px;display:flex;flex-wrap:wrap}
+        .price-list li span{min-width:180px}
+        .materials-grid{display:flex;gap:30px;align-items:center;margin-top:10px}
+        .course-summary-section .material-item{text-align:center}
+        .course-summary-section .material-item img{
+            max-width:120px;height:auto;border:1px solid #ddd;border-radius:4px;padding:5px;background:#fff;
         }
 
-        /* Why Choose Now Section */
-        .why-choose .content-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            justify-content: center;
-            align-items: flex-start;
+        /* Testimonials */
+        .testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px}
+        .testimonial-card{
+            background:#f0fdfc;border:2px solid #e0f2f1;padding:25px;border-radius:8px;display:flex;flex-direction:column;
         }
-        .why-choose .grid-item {
-            flex: 1 1 calc(50% - 30px); /* 2 columns on larger screens */
-            min-width: 300px;
-            background-color: #e0f2f1;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        .testimonial-card .quote{font-size:1.1em;margin-bottom:15px;flex-grow:1;position:relative;padding-left:20px}
+        .testimonial-card .quote::before{
+            content:'“';font-size:3em;color:#00796b;position:absolute;left:-10px;top:-10px;opacity:.5;
         }
-        .why-choose .grid-item h3 {
-            color: #004d40;
-            margin-top: 0;
-        }
-        .why-choose .grid-item img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
-            margin-bottom: 15px;
-        }
+        .testimonial-card .author{text-align:right;font-weight:bold;color:#004d40}
+        .testimonial-card .author span{display:block;font-size:.9em;font-weight:normal;color:#333}
 
-        /* 動画セクション */
-        .video-section {
-            background-color: #f0fdfc;
+        /* ===== 共通CTAボタン ===== */
+        .cta-buttons{display:flex;flex-wrap:wrap;justify-content:center;gap:20px}
+        .btn{
+            display:inline-flex;justify-content:center;align-items:center;text-align:center;
+            padding:15px 30px;border-radius:30px;font-size:1.2em;font-weight:bold;
+            text-decoration:none;transition:transform .2s,box-shadow .2s,background-color .2s;
+            box-shadow:0 4px 6px rgba(0,0,0,.15);flex:1 1 260px;min-width:260px;line-height:1.25;
         }
-        .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 アスペクト比 */
-            height: 0;
-            overflow: hidden;
-            max-width: 100%;
-            background: #000;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
+        .btn:hover{transform:translateY(-3px)}
+        .btn-line{background:#06C755;color:#fff;box-shadow:0 8px 18px rgba(6,199,85,.25)}
+        .btn-line:hover{background:#05b64e}
+        .btn-form{background:#ff9800;color:#fff}
+        .btn-form:hover{background:#f57c00}
+        .btn-phone{background:#00796b;color:#fff}
+        .btn-phone:hover{background:#004d40}
+        .phone-note{display:block;font-size:.7em;font-weight:normal;margin-top:4px;line-height:1.2}
 
-        /* Course Details Section */
-        .course-details ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-        .course-details ul li {
-            background-color: #e0f2f1;
-            padding: 20px;
-            border-radius: 8px;
-            flex: 1 1 calc(33% - 20px);
-            min-width: 280px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .course-details .method-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-top: 30px;
-            justify-content: center;
-        }
-        .course-details .method-item {
-            flex: 1 1 calc(20% - 20px); /* 5 items per row */
-            min-width: 150px;
-            text-align: center;
-            padding: 15px;
-            background-color: #f0fdfc;
-            border-radius: 5px;
-            border: 1px solid #b2dfdb;
-        }
-        .course-details .method-item h4 {
-            color: #00796b;
-            margin: 0;
-            font-size: 1.1em;
-        }
-        .course-details .lesson-content-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 40px;
-        }
-        .course-details .lesson-content-item {
-            background-color: #e0f2f1;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-        .course-details .lesson-content-item img {
-            max-width: 100px;
-            margin-bottom: 10px;
-        }
-        .course-details .growth-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 40px;
-        }
-        .course-details .growth-table th,
-        .course-details .growth-table td {
-            border: 1px solid #b2dfdb;
-            padding: 12px;
-            text-align: left;
-        }
-        .course-details .growth-table th {
-            background-color: #00796b;
-            color: #fff;
-            font-weight: bold;
-        }
-        .course-details .growth-table td:first-child {
-            background-color: #f0fdfc;
-            font-weight: bold;
-            color: #004d40;
-        }
+        /* CTA sections */
+        .cta-section{background:#f0fdfc;color:#333;padding:40px 20px;text-align:center;margin:0 auto 20px;border-radius:8px}
+        .cta-section h2{color:#004d40;margin:0 0 15px}
+        .cta-section p{max-width:600px;margin:0 auto 30px}
+        .cta-bottom{background:#004d40;color:#fff}
+        .cta-bottom h2{color:#fff}
 
-        /* Lesson Forms Section */
-        .lesson-forms .form-option {
-            background-color: #e0f2f1;
-            padding: 30px;
-            border-radius: 8px;
-            margin-bottom: 30px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        /* FAQ */
+        .faq-item{background:#e0f2f1;margin-bottom:15px;border-radius:8px;overflow:hidden;box-shadow:0 2px 4px rgba(0,0,0,.1)}
+        .faq-question{
+            display:flex;justify-content:space-between;align-items:center;background:#00796b;color:#fff;
+            padding:18px 25px;cursor:pointer;font-weight:bold;user-select:none;transition:background-color .3s;outline:none;
         }
-        .lesson-forms .form-option h3 {
-            color: #004d40;
-            margin-top: 0;
-            margin-bottom: 15px;
-            font-size: 1.6em;
+        .faq-question:hover{background:#006459}
+        .faq-question:focus{box-shadow:inset 0 0 0 3px rgba(255,255,255,.35)}
+        .faq-question::after{content:'+';font-size:1.5em;line-height:1;margin-left:12px;transition:transform .3s}
+        .faq-question.active::after{content:'–'}
+        .faq-answer{
+            padding:0 25px;max-height:0;overflow:hidden;transition:max-height .3s ease-out,padding .3s ease-out;background:#f9f9f9;
         }
-        .lesson-forms .form-option ul {
-            list-style: disc;
-            padding-left: 20px;
-            margin-bottom: 15px;
-        }
-        .lesson-forms .form-option ul li strong {
-            color: #00796b;
-        }
+        .faq-answer.open{padding:15px 25px}
 
-        /* Support Section */
-        .support-section .support-item {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            margin-bottom: 30px;
-            background-color: #f0fdfc;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        /* Access */
+        .access-card{
+            display:flex;flex-wrap:wrap;gap:30px;background:#f0fdfc;padding:30px;border-radius:8px;
+            box-shadow:0 2px 5px rgba(0,0,0,.1);align-items:center;
         }
-        .support-section .support-item img {
-            width: 80px;
-            height: auto;
-            flex-shrink: 0;
-        }
-        .support-section .support-item h3 {
-            margin: 0;
-            color: #004d40;
-        }
-        .support-section .support-item p {
-            margin: 0;
-        }
-        
-        /* コース概要セクション */
-        .course-summary-section {
-            background-color: #fff;
-        }
-        .tabs {
-            display: flex;
-            border-bottom: 3px solid #004d40;
-            margin-bottom: -1px;
-        }
-        .tab-link {
-            padding: 12px 25px;
-            cursor: pointer;
-            border: 1px solid #ddd;
-            border-bottom: none;
-            background-color: #f1f1f1;
-            font-size: 1.1em;
-            font-weight: 700;
-            border-radius: 8px 8px 0 0;
-            margin-right: 5px;
-            transition: background-color 0.3s, color 0.3s;
-            color: #666;
-        }
-        .tab-link.active {
-            background-color: #004d40;
-            color: #fff;
-            border-color: #004d40;
-        }
-        .tab-content {
-            border: 1px solid #ddd;
-            border-radius: 0 8px 8px 8px;
-            padding: 20px;
-            background-color: #fff;
-        }
-        .tab-pane {
-            display: none;
-        }
-        .tab-pane.active {
-            display: block;
-            animation: fadeIn 0.5s;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        .detail-row {
-            display: flex;
-            padding: 25px 10px;
-            border-bottom: 1px solid #e0f2f1;
-            align-items: flex-start;
-        }
-        .detail-row:last-child {
-            border-bottom: none;
-        }
-        .detail-label {
-            flex-basis: 180px;
-            flex-shrink: 0;
-            font-weight: 700;
-            color: #004d40;
-            padding-right: 20px;
-            font-size: 1.1em;
-        }
-        .detail-label .label-sub {
-            font-size: 0.8em;
-            font-weight: normal;
-            color: #333;
-        }
-        .detail-content {
-            flex-grow: 1;
-        }
-        .detail-content p, .detail-content ul {
-            margin: 0;
-        }
-        .detail-content .note {
-            font-size: 0.9em;
-            color: #555;
-            margin-top: 10px;
-        }
-        .price-list {
-            list-style: none;
-            padding: 0;
-        }
-        .price-list li {
-            margin-bottom: 8px;
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .price-list li span {
-            min-width: 180px;
-        }
-        .materials-grid {
-            display: flex;
-            gap: 30px;
-            align-items: center;
-            margin-top: 10px;
-        }
-        .course-summary-section .material-item {
-            text-align: center;
-        }
-        .course-summary-section .material-item img {
-            max-width: 120px;
-            height: auto;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            padding: 5px;
-            background: #fff;
-        }
-        .course-summary-section .material-item p {
-            margin-top: 8px;
-            font-size: 0.95em;
-        }
+        .access-image{flex:1 1 300px}
+        .access-image img{width:100%;height:auto;border-radius:8px;box-shadow:0 2px 4px rgba(0,0,0,.1)}
+        .access-info{flex:2 1 400px}
+        .access-info h3{font-size:1.6em;color:#004d40;margin:0 0 20px}
+        .access-info dt{font-weight:700;color:#004d40;margin-top:15px}
+        .highlight{color:#00796b;font-weight:bold}
 
-        /* お客様の声セクション */
-        .testimonials-section {
-            background-color: #fff;
-        }
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        .testimonial-card {
-            background-color: #f0fdfc;
-            border: 2px solid #e0f2f1;
-            padding: 25px;
-            border-radius: 8px;
-            display: flex;
-            flex-direction: column;
-        }
-        .testimonial-card .quote {
-            font-size: 1.1em;
-            margin-bottom: 15px;
-            flex-grow: 1;
-            position: relative;
-            padding-left: 20px;
-        }
-        .testimonial-card .quote::before {
-            content: '“';
-            font-size: 3em;
-            color: #00796b;
-            position: absolute;
-            left: -10px;
-            top: -10px;
-            opacity: 0.5;
-        }
-        .testimonial-card .author {
-            text-align: right;
-            font-weight: bold;
-            color: #004d40;
-        }
-        .testimonial-card .author span {
-            display: block;
-            font-size: 0.9em;
-            font-weight: normal;
-            color: #333;
-        }
-
-        /* FAQ Section */
-        .faq-section .faq-item {
-            background-color: #e0f2f1;
-            margin-bottom: 15px;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .faq-section .faq-question {
-            display: block;
-            background-color: #00796b;
-            color: #fff;
-            padding: 18px 25px;
-            cursor: pointer;
-            font-weight: bold;
-            position: relative;
-            user-select: none;
-            transition: background-color 0.3s ease;
-        }
-        .faq-section .faq-question:hover {
-            background-color: #004d40;
-        }
-        .faq-section .faq-question::after {
-            content: '+';
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 1.5em;
-            transition: transform 0.3s ease;
-        }
-        .faq-section .faq-question.active::after {
-            content: '-';
-            transform: translateY(-50%) rotate(0deg);
-        }
-        .faq-section .faq-answer {
-            padding: 0 25px;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
-            background-color: #f9f9f9;
-        }
-        .faq-section .faq-answer.open {
-            max-height: 500px;
-            padding: 15px 25px;
-        }
-        .faq-section .faq-link {
-            text-align: center;
-            margin-top: 30px;
-        }
-        .faq-section .faq-link a {
-            display: inline-block;
-            background-color: #00796b;
-            color: #fff;
-            padding: 12px 25px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-        .faq-section .faq-link a:hover {
-            background-color: #004d40;
-            text-decoration: none;
-        }
-
-        /* Access Section */
-        .access-section {
-            background-color: #fff;
-        }
-        .access-section .access-card {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            background-color: #f0fdfc;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            align-items: center;
-        }
-        .access-section .access-image {
-            flex: 1 1 300px;
-        }
-        .access-section .access-image img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .access-section .access-info {
-            flex: 2 1 400px;
-        }
-        .access-section .access-info h3 {
-            font-size: 1.6em;
-            color: #004d40;
-            margin-top: 0;
-            margin-bottom: 20px;
-        }
-        .access-section .access-info dl {
-            margin: 0;
-        }
-        .access-section .access-info dt {
-            font-weight: 700;
-            color: #004d40;
-            margin-top: 15px;
-        }
-        .access-section .access-info dd {
-            margin: 5px 0 0 0;
-        }
-        .access-section .access-info .highlight {
-            color: #00796b;
-            font-weight: bold;
-        }
-
-        /* CTAセクション (中間・最下部共通) */
-        .cta-section {
-            background-color: #f0fdfc;
-            color: #333;
-            padding: 40px 20px;
-            text-align: center;
-            margin: 0 auto 20px;
-            border-radius: 8px;
-        }
-        .cta-section h2 {
-            color: #004d40;
-            margin-top: 0;
-            margin-bottom: 15px;
-        }
-        .cta-section p {
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 30px;
-        }
-        .cta-section .cta-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-        .cta-section .cta-buttons a {
-            display: inline-block;
-            background-color: #ff9800;
-            color: #fff;
-            padding: 15px 30px;
-            border-radius: 30px;
-            font-size: 1.2em;
-            font-weight: bold;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-            text-decoration: none;
-        }
-        .cta-section .cta-buttons a:hover {
-            background-color: #f57c00;
-            transform: translateY(-3px);
-            text-decoration: none;
-        }
-        .cta-section .cta-buttons a.phone-button {
-            background-color: #00796b;
-        }
-        .cta-section .cta-buttons a.phone-button:hover {
-            background-color: #004d40;
-        }
-        .cta-section .cta-buttons a .phone-note {
-            display: block;
-            font-size: 0.7em;
-            font-weight: normal;
-            margin-top: 4px;
-            line-height: 1.2;
-        }
-
-        /* 最下部CTAの個別スタイル */
-        .cta-bottom {
-            background-color: #004d40;
-            color: #fff;
-        }
-        .cta-bottom h2 {
-            color: #fff;
-        }
-        
         /* Footer */
-        footer {
-            background-color: #263238;
-            color: #eceff1;
-            padding: 40px 20px;
-            text-align: center;
-            font-size: 0.9em;
-        }
-        footer .footer-links a {
-            color: #80cbc4;
-            margin: 0 10px;
-        }
-        footer .social-links img {
-            width: 30px;
-            height: 30px;
-            margin: 0 8px;
-            vertical-align: middle;
-        }
-        footer p {
-            margin-top: 20px;
-        }
+        footer{background:#263238;color:#eceff1;padding:40px 20px;text-align:center;font-size:.9em}
 
-        /* Responsive Adjustments */
-        @media (max-width: 768px) {
-            h1 { font-size: 1.8em; }
-            h2 { font-size: 1.5em; }
-            h3 { font-size: 1.3em; }
-
-            .hero { padding: 40px 15px; }
-            .hero h1 { font-size: 2em; }
-            .hero p { font-size: 1em; }
-
-            .why-choose .grid-item {
-                flex: 1 1 100%;
-            }
-            .course-details ul li,
-            .course-details .method-item {
-                flex: 1 1 100%;
-            }
-            .course-details .lesson-content-grid {
-                grid-template-columns: 1fr;
-            }
-            .support-section .support-item {
-                flex-direction: column;
-                text-align: center;
-            }
-            .support-section .support-item img {
-                margin-bottom: 10px;
-            }
-            
-            .cta-section .cta-buttons a {
-                width: 100%;
-                box-sizing: border-box;
-                font-size: 1.1em;
-            }
-            
-            .access-section .access-card {
-                flex-direction: column;
-                padding: 20px;
-            }
-            .access-section .access-info {
-                text-align: center;
-            }
-            
-            /* コース概要レスポンシブ */
-            .detail-row {
-                flex-direction: column;
-            }
-            .detail-label {
-                flex-basis: auto;
-                margin-bottom: 15px;
-                padding-right: 0;
-            }
-            .price-list li span {
-                min-width: 150px;
-                margin-bottom: 5px;
-            }
-            .materials-grid {
-                flex-direction: column;
-                align-items: flex-start;
-            }
+        /* Sticky CTA (mobile) */
+        .sticky-cta{
+            position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid rgba(0,0,0,.08);
+            box-shadow:0 -6px 18px rgba(0,0,0,.08);padding:10px 12px env(safe-area-inset-bottom);z-index:999;display:none;
         }
+        .sticky-cta .container{max-width:1200px;margin:0 auto;padding:0 20px}
+        .sticky-cta-inner{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+        .sticky-btn{
+            display:inline-flex;justify-content:center;align-items:center;text-align:center;padding:14px 10px;border-radius:12px;
+            font-weight:700;text-decoration:none;font-size:1.02rem;line-height:1.25;
+        }
+        .sticky-btn--line{background:#06C755;color:#fff;box-shadow:0 8px 18px rgba(6,199,85,.25)}
+        .sticky-btn--tel{background:#fff;color:#00796b;border:2px solid #00796b}
 
-        @media (max-width: 480px) {
-            .container { padding: 15px; }
-            section { padding: 40px 0; }
-            .hero h1 { font-size: 1.6em; }
-            .hero p { font-size: 0.9em; }
+        /* Responsive */
+        @media (max-width:768px){
+            h1{font-size:1.8em} h2{font-size:1.5em} h3{font-size:1.3em}
+            .hero{padding:40px 15px} .hero h1{font-size:2em} .hero p{font-size:1em}
+            .why-choose .grid-item{flex:1 1 100%}
+            .course-details ul li,.method-item{flex:1 1 100%}
+            .lesson-content-grid{grid-template-columns:1fr}
+            .support-item{flex-direction:column;text-align:center}
+            .support-item img{margin-bottom:10px}
+            .btn{width:100%;min-width:0;box-sizing:border-box;font-size:1.1em}
+            .access-card{flex-direction:column;padding:20px}
+            .access-info{text-align:center}
+            .detail-row{flex-direction:column}
+            .detail-label{flex-basis:auto;margin-bottom:15px;padding-right:0}
+            .price-list li span{min-width:150px;margin-bottom:5px}
+            .materials-grid{flex-direction:column;align-items:flex-start}
+            .sticky-cta{display:block}
+            body{padding-bottom:80px}
+        }
+        @media (max-width:480px){
+            .container{padding:15px}
+            section{padding:40px 0}
+            .hero h1{font-size:1.6em}
+            .hero p{font-size:.9em}
         }
     </style>
 </head>
 <body>
 
-    <!-- ===== ヘッダーセクション ===== -->
+    <!-- Header -->
     <header>
         <div class="container">
             <img src="image/logo.png" alt="ヤマハ音楽教室ロゴ" class="logo">
@@ -714,7 +254,7 @@
     </header>
 
     <main>
-        <!-- ===== ヒーローセクション ===== -->
+        <!-- Hero -->
         <section class="hero">
             <div class="container">
                 <h1>4歳・5歳は、耳の力がぐんと伸びる「聴覚の発達のゴールデンエイジ」。<br>この大切な時期に、豊かな音楽体験を。</h1>
@@ -723,19 +263,20 @@
             </div>
         </section>
 
-        <!-- ===== 中間CTAセクション 1 ===== -->
+        <!-- CTA 1 -->
         <section class="cta-section">
             <div class="container">
                 <h2>さっそく、音楽の世界を体験してみませんか？</h2>
                 <p>Webフォームまたはお電話で、お気軽に体験レッスン・見学をお申し込みください。</p>
                 <div class="cta-buttons">
-                    <a href="https://www.toriimusic.co.jp/18539/" class="button">Webで体験レッスンを予約</a>
-                    <a href="tel:0740-22-2063" class="button phone-button">電話でお問い合わせ<span class="phone-note">(タップして発信)</span></a>
+                    <a href="https://lin.ee/uVpVQX3" target="_blank" rel="noopener" class="btn btn-line">💬 LINEで質問・相談</a>
+                    <a href="https://www.toriimusic.co.jp/18539/" class="btn btn-form">📝 Webで体験レッスンを予約</a>
+                    <a href="tel:0740-22-2063" class="btn btn-phone">📞 電話でお問い合わせ<span class="phone-note">(タップして発信)</span></a>
                 </div>
             </div>
         </section>
 
-        <!-- ===== 「なぜ選ぶべきか」セクション ===== -->
+        <!-- Why Choose -->
         <section class="why-choose">
             <div class="container">
                 <h2>なぜ今、4・5歳で「ぷらいまりー」を選ぶべきなの？</h2>
@@ -758,8 +299,8 @@
                 </div>
             </div>
         </section>
-        
-        <!-- ===== 動画セクション ===== -->
+
+        <!-- Video -->
         <section class="video-section">
             <div class="container">
                 <h2>実際のレッスンの様子を動画でご覧ください</h2>
@@ -769,7 +310,7 @@
             </div>
         </section>
 
-        <!-- ===== コース詳細セクション ===== -->
+        <!-- Course Details -->
         <section class="course-details">
             <div class="container">
                 <h2>「ぷらいまりー」（4・5歳コース）ってどんなレッスン？</h2>
@@ -825,11 +366,7 @@
                 <h3>2年間での成長ステップ</h3>
                 <table class="growth-table">
                     <thead>
-                        <tr>
-                            <th>チカラ</th>
-                            <th>1年後</th>
-                            <th>2年後</th>
-                        </tr>
+                        <tr><th>チカラ</th><th>1年後</th><th>2年後</th></tr>
                     </thead>
                     <tbody>
                         <tr>
@@ -858,7 +395,7 @@
             </div>
         </section>
 
-        <!-- ===== レッスン形態セクション ===== -->
+        <!-- Forms -->
         <section class="lesson-forms">
             <div class="container">
                 <h2>お友達と一緒だから楽しい！グループレッスン</h2>
@@ -872,7 +409,7 @@
             </div>
         </section>
 
-        <!-- ===== サポートセクション ===== -->
+        <!-- Support -->
         <section class="support-section">
             <div class="container">
                 <h2>ご家庭でのサポートと保護者の皆様へ</h2>
@@ -893,18 +430,17 @@
             </div>
         </section>
 
-        <!-- ===== コース概要セクション ===== -->
+        <!-- Course Summary (Tabs) -->
         <section class="course-summary-section">
             <div class="container">
                 <h2>コース概要・料金</h2>
-                
                 <div class="tabs">
                     <button class="tab-link active" data-tab="primary">ぷらいまりー</button>
                     <button class="tab-link" data-tab="primary-personal">ぷらいまりー（パーソナル）</button>
                 </div>
 
                 <div class="tab-content">
-                    <!-- ぷらいまりーコースのコンテンツ -->
+                    <!-- ぷらいまりー -->
                     <div id="primary" class="tab-pane active">
                         <div class="detail-row">
                             <div class="detail-label">対象年齢</div>
@@ -922,7 +458,7 @@
                             <div class="detail-content">
                                 <p><strong>グループ レッスン + 個人 レッスン</strong></p>
                                 <p class="note">グループレッスン：月3回 / 個人レッスン：月0回～3回より選択</p>
-                                <p class="note">※「グループ＋個人月1回」を推奨としますが、個人レッスンの回数はご希望に応じてお選びいただけます。</p>
+                                <p class="note">※「グループ＋個人月1回」を推奨。回数はご希望に応じて選択可能です。</p>
                             </div>
                         </div>
                         <div class="detail-row">
@@ -941,9 +477,7 @@
                                     <li><span>グループ + 個人月2回:</span><strong>11,660円 ～ 12,540円</strong></li>
                                     <li><span>グループ + 個人月3回:</span><strong>13,640円 ～ 14,740円</strong></li>
                                 </ul>
-                                <p class="note">※レッスン料は平日・土日の受講曜日によって異なります。</p>
-                                <p class="note">※レッスン料には、専用サイト(LMS)の利用料を含みます。CDの販売はございません。</p>
-                                <p class="note">※個人レッスンの回数や時間は、会場や曜日によりご希望に沿えない場合がございます。</p>
+                                <p class="note">※レッスン料は平日・土日で異なります。専用サイト(LMS)利用料を含む。CDの販売はありません。</p>
                             </div>
                         </div>
                         <div class="detail-row">
@@ -952,7 +486,7 @@
                                 <div class="materials-grid">
                                     <div class="material-item">
                                         <img src="image/overview_photo_01.png" alt="テキストの画像">
-                                        <p>テキスト<strong>2,640円</strong></p>
+                                        <p>テキスト<strong> 2,640円</strong></p>
                                     </div>
                                     <div class="material-item">
                                         <img src="image/bagoverview_photo_02.png" alt="レッスンバッグの画像">
@@ -962,21 +496,21 @@
                                 <p class="note">※テキスト(2,640円)は半年ごとにお買い求めいただきます。</p>
                             </div>
                         </div>
-                         <div class="detail-row">
+                        <div class="detail-row">
                             <div class="detail-label">入会金・施設費</div>
                             <div class="detail-content">
-                                 <p>入会金：5,500円<br>施設費：<strong>770円</strong> (月額)</p>
+                                <p>入会金：5,500円<br>施設費：<strong>770円</strong> (月額)</p>
                             </div>
                         </div>
                         <div class="detail-row">
                             <div class="detail-label">保護者の同伴</div>
                             <div class="detail-content">
-                                <p>ぷらいまりー2の前半は保護者の方同伴のレッスンとなりますが、後半からはお子さまの自立を意識したレッスンに徐々にシフトし、ぷらいまりー3からは任意となります。</p>
+                                <p>ぷらいまりー2の前半は保護者の方同伴、後半から自立を意識したレッスンに。ぷらいまりー3からは任意です。</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- [更新済み] ぷらいまりー（パーソナル）コースのコンテンツ -->
+                    <!-- ぷらいまりー（パーソナル） -->
                     <div id="primary-personal" class="tab-pane">
                         <div class="detail-row">
                             <div class="detail-label">対象年齢</div>
@@ -993,23 +527,18 @@
                             <div class="detail-label">レッスン形態</div>
                             <div class="detail-content">
                                 <p><strong>個人レッスン 月3回</strong></p>
-                                <p class="note">※楽器はピアノまたはエレクトーンよりお選びいただけます。</p>
+                                <p class="note">※楽器はピアノまたはエレクトーン。</p>
                             </div>
                         </div>
                         <div class="detail-row">
                             <div class="detail-label">レッスン時間</div>
-                            <div class="detail-content">
-                                <p><strong>1回 30分</strong></p>
-                            </div>
+                            <div class="detail-content"><p><strong>1回 30分</strong></p></div>
                         </div>
                         <div class="detail-row">
                             <div class="detail-label">レッスン料<br><span class="label-sub">(月額・税込)</span></div>
                             <div class="detail-content">
-                                <ul class="price-list">
-                                    <li><strong>9,900円</strong> または <strong>10,450円</strong></li>
-                                </ul>
-                                <p class="note">※レッスン料は平日・土日の受講曜日によって異なります。</p>
-                                <p class="note">※レッスン料には、専用サイト(LMS)の利用料を含みます。CDの販売はございません。</p>
+                                <ul class="price-list"><li><strong>9,900円</strong> または <strong>10,450円</strong></li></ul>
+                                <p class="note">※平日・土日で異なります。専用サイト(LMS)利用料を含む。CDの販売はありません。</p>
                             </div>
                         </div>
                         <div class="detail-row">
@@ -1027,16 +556,16 @@
                                 </div>
                             </div>
                         </div>
-                         <div class="detail-row">
+                        <div class="detail-row">
                             <div class="detail-label">入会金・施設費</div>
                             <div class="detail-content">
-                                 <p>入会金：5,500円<br>施設費：<strong>770円</strong> (月額)</p>
+                                <p>入会金：5,500円<br>施設費：<strong>770円</strong> (月額)</p>
                             </div>
                         </div>
                         <div class="detail-row">
                             <div class="detail-label">保護者の同伴</div>
                             <div class="detail-content">
-                                <p>ぷらいまりー2の前半は保護者の方にご同伴いただきますが、後半からはお子さまの自立を意識したレッスンに徐々にシフトし、ぷらいまりー3からは任意となります。</p>
+                                <p>ぷらいまりー2の前半はご同伴、後半から自立へ。ぷらいまりー3からは任意です。</p>
                             </div>
                         </div>
                     </div>
@@ -1044,7 +573,7 @@
             </div>
         </section>
 
-        <!-- ===== お客様の声セクション ===== -->
+        <!-- Testimonials -->
         <section class="testimonials-section">
             <div class="container">
                 <h2>実際に通われている保護者の皆様の声</h2>
@@ -1065,59 +594,66 @@
             </div>
         </section>
 
-        <!-- ===== 中間CTAセクション 2 ===== -->
+        <!-- CTA 2 -->
         <section class="cta-section">
             <div class="container">
                 <h2>料金や内容にご納得いただけましたら、<br>ぜひ一度、教室の雰囲気を見に来てください！</h2>
-                <p>Webフォームまたはお電話で、お気軽に体験レッスン・見学をお申し込みください。</p>
+            <p>Webフォームまたはお電話で、お気軽に体験レッスン・見学をお申し込みください。</p>
                 <div class="cta-buttons">
-                    <a href="https://www.toriimusic.co.jp/18539/" class="button">Webで体験レッスンを予約</a>
-                    <a href="tel:0740-22-2063" class="button phone-button">電話でお問い合わせ<span class="phone-note">(タップして発信)</span></a>
+                    <a href="https://lin.ee/uVpVQX3" target="_blank" rel="noopener" class="btn btn-line">💬 LINEで質問・相談</a>
+                    <a href="https://www.toriimusic.co.jp/18539/" class="btn btn-form">📝 Webで体験レッスンを予約</a>
+                    <a href="tel:0740-22-2063" class="btn btn-phone">📞 電話でお問い合わせ<span class="phone-note">(タップして発信)</span></a>
                 </div>
             </div>
         </section>
 
-        <!-- ===== FAQセクション ===== -->
+        <!-- FAQ -->
         <section class="faq-section">
             <div class="container">
                 <h2>よくある質問（FAQ）</h2>
+
                 <div class="faq-item">
-                    <div class="faq-question">楽器の経験が全くありませんが、大丈夫ですか？</div>
+                    <div class="faq-question" role="button" tabindex="0">楽器の経験が全くありませんが、大丈夫ですか？</div>
                     <div class="faq-answer">
                         <p>はい、ご安心ください。このコースは、ほとんどのお子さまが初めて本格的な音楽レッスンを受けることを前提としています。「きく」ことから自然に音楽に親しみ、無理なく「うたう」「ひく」へとステップアップしていくカリキュラムですので、楽しくご参加いただけます。</p>
                     </div>
                 </div>
+
                 <div class="faq-item">
-                    <div class="faq-question">ヤマハで習うと、なぜ良いのですか？</div>
+                    <div class="faq-question" role="button" tabindex="0">ヤマハで習うと、なぜ良いのですか？</div>
                     <div class="faq-answer">
                         <p>ヤマハでは、長年の研究に基づいた独自のカリキュラムで、演奏技術だけでなく、音感、リズム感、ハーモニー感、読譜、創作といった「総合的な音楽力」をバランスよく育みます。この基礎力が、将来どんな音楽を演奏する上でも大きな力となります。</p>
                     </div>
                 </div>
+
                 <div class="faq-item">
-                    <div class="faq-question">宿題はありますか？</div>
+                    <div class="faq-question" role="button" tabindex="0">宿題はありますか？</div>
                     <div class="faq-answer">
                         <p>ご家庭で教材のDVDを見たり、CDを聴いたり、レッスンで習った曲を少し弾いてみる、といった簡単な「復習」をお願いしています。ご家庭で音楽に触れる時間を持つことが、お子様の成長を大きく後押しします。</p>
                     </div>
                 </div>
+
                 <div class="faq-item">
-                    <div class="faq-question">家庭には、どんな楽器を用意したらいいですか？</div>
+                    <div class="faq-question" role="button" tabindex="0">家庭には、どんな楽器を用意したらいいですか？</div>
                     <div class="faq-answer">
                         <p>ご家庭での練習のために、鍵盤楽器をご用意いただくことをお勧めします。豊かな表現力や正しい音程感を養うためには、アコースティックピアノや、鍵盤のタッチがピアノに近い電子ピアノ、エレクトーンなどが理想的です。</p>
                     </div>
                 </div>
+
                 <div class="faq-item">
-                    <div class="faq-question">レッスンに保護者の付き添いは必要ですか？</div>
+                    <div class="faq-question" role="button" tabindex="0">レッスンに保護者の付き添いは必要ですか？</div>
                     <div class="faq-answer">
                         <p>はい、このコースでは保護者の方にご同伴いただいています。お子様が安心してレッスンに集中できるだけでなく、保護者の方にもレッスンの内容をご理解いただくことで、ご家庭での練習がよりスムーズになります。お子様の成長を一緒に見守り、喜びを分-ち合える貴重な時間となります。</p>
                     </div>
                 </div>
-                <div class="faq-link">
-                    <a href="https://school.jp.yamaha.com/music/faq/">その他のよくある質問はこちら</a>
+
+                <div class="faq-link" style="text-align:center;margin-top:30px;">
+                    <a href="https://school.jp.yamaha.com/music/faq/" class="btn btn-form" style="border-radius:8px;">その他のよくある質問はこちら</a>
                 </div>
             </div>
         </section>
 
-        <!-- ===== アクセスセクション ===== -->
+        <!-- Access -->
         <section class="access-section">
             <div class="container">
                 <h2>教室のご案内</h2>
@@ -1134,10 +670,7 @@
                                 <a href="https://www.google.com/maps/search/?api=1&query=滋賀県大津市和迩中浜366" target="_blank" rel="noopener noreferrer">▶︎ Googleマップで見る</a>
                             </dd>
                             <dt>アクセス</dt>
-                            <dd>
-                                JR湖西線 和邇駅より徒歩1分<br>
-                                <span class="highlight">駐車場</span>：あり
-                            </dd>
+                            <dd>JR湖西線 和邇駅より徒歩1分<br><span class="highlight">駐車場</span>：あり</dd>
                             <dt>電話番号</dt>
                             <dd>0740-22-2063</dd>
                         </dl>
@@ -1146,60 +679,112 @@
             </div>
         </section>
 
-        <!-- ===== 最下部CTAセクション ===== -->
+        <!-- CTA Bottom -->
         <section class="cta-section cta-bottom">
             <div class="container">
                 <h2>まずはお子様の可能性を体験！</h2>
                 <div class="cta-buttons">
-                    <a href="https://www.toriimusic.co.jp/18539/" class="button">無料体験レッスン・レッスン見学を予約する</a>
+                    <a href="https://lin.ee/uVpVQX3" target="_blank" rel="noopener" class="btn btn-line">💬 LINEで質問・相談</a>
+                    <a href="https://www.toriimusic.co.jp/18539/" class="btn btn-form">📝 無料体験レッスン・レッスン見学を予約する</a>
                 </div>
-                <p>無料体験レッスン・レッスン見学 プレゼントキャンペーン実施中！</p>
+                <p style="margin-top:16px;">無料体験レッスン・レッスン見学 プレゼントキャンペーン実施中！</p>
             </div>
         </section>
     </main>
 
-    <!-- ===== フッター ===== -->
     <footer>
         <div class="container">
             <p>&copy; 2024 Yamaha Music School. All Rights Reserved.</p>
         </div>
     </footer>
 
+    <!-- Sticky CTA (mobile only) -->
+    <div class="sticky-cta" id="stickyCta" aria-hidden="true">
+        <div class="container">
+            <div class="sticky-cta-inner">
+                <a href="https://lin.ee/uVpVQX3" target="_blank" rel="noopener" class="sticky-btn sticky-btn--line" aria-label="LINEで質問・相談">💬 LINEで質問・相談</a>
+                <a href="tel:0740-22-2063" class="sticky-btn sticky-btn--tel" aria-label="電話で問い合わせ">📞 電話</a>
+            </div>
+        </div>
+    </div>
+
     <script>
-        // FAQ Accordion
-        document.querySelectorAll('.faq-question').forEach(button => {
-            button.addEventListener('click', () => {
-                const answer = button.nextElementSibling;
-                button.classList.toggle('active');
-                if (answer.classList.contains('open')) {
-                    answer.classList.remove('open');
-                    answer.style.maxHeight = '0';
-                    answer.style.padding = '0 25px';
-                } else {
-                    answer.classList.add('open');
-                    answer.style.maxHeight = answer.scrollHeight + 'px';
-                    answer.style.padding = '15px 25px';
+        // Smooth anchor (if any in future)
+        document.querySelectorAll('a[href^="#"]').forEach(a=>{
+            a.addEventListener('click',e=>{
+                const t=document.querySelector(a.getAttribute('href'));
+                if(!t) return;
+                e.preventDefault(); t.scrollIntoView({behavior:'smooth'});
+            });
+        });
+
+        // Tabs
+        document.querySelectorAll('.tab-link').forEach(btn=>{
+            btn.addEventListener('click',()=>{
+                const wrap=btn.closest('.course-summary-section');
+                const id=btn.dataset.tab;
+                wrap.querySelectorAll('.tab-link').forEach(b=>b.classList.remove('active'));
+                wrap.querySelectorAll('.tab-pane').forEach(p=>p.classList.remove('active'));
+                btn.classList.add('active');
+                wrap.querySelector('#'+id).classList.add('active');
+            });
+        });
+
+        // FAQ Accordion (accessible + resize-safe)
+        (function(){
+            const items=document.querySelectorAll('.faq-item');
+            const closeItem=item=>{
+                const q=item.querySelector('.faq-question');
+                const a=item.querySelector('.faq-answer');
+                q.classList.remove('active');
+                a.classList.remove('open');
+                a.style.maxHeight='0px';
+            };
+            const openItem=item=>{
+                const q=item.querySelector('.faq-question');
+                const a=item.querySelector('.faq-answer');
+                q.classList.add('active');
+                a.classList.add('open');
+                a.style.maxHeight=a.scrollHeight+'px';
+            };
+            items.forEach(item=>{
+                const q=item.querySelector('.faq-question');
+                const a=item.querySelector('.faq-answer');
+                closeItem(item);
+                const toggle=()=>{
+                    if(a.classList.contains('open')){ closeItem(item); }
+                    else{ items.forEach(i=>{ if(i!==item) closeItem(i); }); openItem(item); }
+                };
+                q.addEventListener('click',toggle);
+                q.addEventListener('keydown',e=>{
+                    if(e.key==='Enter'||e.key===' '){ e.preventDefault(); toggle(); }
+                });
+                window.addEventListener('resize',()=>{
+                    if(a.classList.contains('open')) a.style.maxHeight=a.scrollHeight+'px';
+                });
+                q.setAttribute('role','button'); q.setAttribute('tabindex','0'); // 保険
+            });
+        })();
+
+        // Sticky CTA show/hide
+        (function(){
+            const sticky=document.getElementById('stickyCta');
+            if(!sticky) return;
+            let visible=false;
+            const onScroll=()=>{
+                const y=window.scrollY||document.documentElement.scrollTop||0;
+                if(y>120 && !visible){
+                    sticky.style.transform='translateY(0)'; sticky.style.opacity='1';
+                    sticky.setAttribute('aria-hidden','false'); visible=true;
+                }else if(y<=120 && visible){
+                    sticky.style.transform=''; sticky.style.opacity='';
+                    sticky.setAttribute('aria-hidden','true'); visible=false;
                 }
-            });
-        });
-
-        // Tab functionality
-        document.querySelectorAll('.tab-link').forEach(button => {
-            button.addEventListener('click', () => {
-                const tabContainer = button.closest('.course-summary-section');
-                const tabName = button.dataset.tab;
-
-                tabContainer.querySelectorAll('.tab-link').forEach(tab => {
-                    tab.classList.remove('active');
-                });
-                tabContainer.querySelectorAll('.tab-pane').forEach(pane => {
-                    pane.classList.remove('active');
-                });
-
-                button.classList.add('active');
-                tabContainer.querySelector(`#${tabName}`).classList.add('active');
-            });
-        });
+            };
+            sticky.style.opacity='0'; sticky.style.transform='translateY(100%)';
+            window.addEventListener('scroll',onScroll,{passive:true});
+            window.addEventListener('load',onScroll);
+        })();
     </script>
 </body>
 </html>
