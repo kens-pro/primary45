@@ -39,6 +39,35 @@
         .hero .hero-image{
             max-width:80%;height:auto;border-radius:10px;box-shadow:0 4px 8px rgba(0,0,0,.2);
         }
+        /* キャンペーンバナー */
+.campaign-banner{
+    background:linear-gradient(135deg,#fff3e0,#ffe0b2);
+    border:2px solid #ff9800;
+    border-radius:12px;
+    padding:18px 20px;
+    margin:20px auto 30px;
+    max-width:600px;
+    text-align:center;
+    box-shadow:0 4px 10px rgba(255,152,0,.15);
+}
+
+.campaign-text{
+    font-size:1.2em;
+    font-weight:bold;
+    color:#e65100;
+    margin:0;
+}
+
+.price-old{
+    text-decoration:line-through;
+    color:#999;
+    margin:0 5px;
+}
+
+.price-new{
+    font-size:1.4em;
+    color:#d84315;
+}
 
         /* Section */
         section{
@@ -264,17 +293,32 @@
         </section>
 
         <!-- CTA 1 -->
-        <section class="cta-section">
-            <div class="container">
-                <h2>さっそく、音楽の世界を体験してみませんか？</h2>
-                <p>Webフォームまたはお電話で、お気軽に体験レッスン・見学をお申し込みください。</p>
-                <div class="cta-buttons">
-                    <a href="https://lin.ee/uVpVQX3" target="_blank" rel="noopener" class="btn btn-line">💬 LINEで質問・相談</a>
-                    <a href="https://school.jp.yamaha.com/music/venue/detail/?id=204024940&courseClsCd=5&category=all" class="btn btn-form">📝 Webで体験レッスンを予約</a>
-                    <a href="tel:0740-22-2063" class="btn btn-phone">📞 電話でお問い合わせ<span class="phone-note">(タップして発信)</span></a>
-                </div>
-            </div>
-        </section>
+       <!-- CTA 1 -->
+<section class="cta-section">
+    <div class="container">
+        <h2>さっそく、音楽の世界を体験してみませんか？</h2>
+        <p>Webフォームまたはお電話で、お気軽に体験レッスン・見学をお申し込みください。</p>
+
+        <!-- ★ 追加：キャンペーン訴求 -->
+        <div class="campaign-banner">
+            <p class="campaign-text">
+                🎉 今なら入会金 <span class="price-old">5,500円</span> →
+                <span class="price-new">2,750円（50%OFF）</span>
+            </p>
+        </p>
+
+    <!-- ←ここに入れる -->
+    <p style="font-size:0.9em; margin-top:8px;">
+        ※５月末までの期間限定
+    </p>        </div>
+
+        <div class="cta-buttons">
+            <a href="https://lin.ee/uVpVQX3" target="_blank" rel="noopener" class="btn btn-line">💬 LINEで質問・相談</a>
+            <a href="https://school.jp.yamaha.com/music/venue/detail/?id=204024940&courseClsCd=5&category=all" class="btn btn-form">📝 Webで体験レッスンを予約</a>
+            <a href="tel:0740-22-2063" class="btn btn-phone">📞 電話でお問い合わせ<span class="phone-note">(タップして発信)</span></a>
+        </div>
+    </div>
+</section>
 
         <!-- Why Choose -->
         <section class="why-choose">
