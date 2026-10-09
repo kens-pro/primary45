@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>4歳・5歳からのヤマハ音楽教室「ぷらいまりー」：耳の力を育む音楽レッスン</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="description" content="4歳・5歳（年中・年長）のヤマハ音楽教室「ぷらいまりー」。大津わにセンターで、きく・うたう・ひく音楽体験。無料体験レッスン・見学を受付中。2026年11月30日まで入会金半額。">
+    <link rel="preload" href="fonts/zen-maru-gothic-900.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/zen-maru-gothic-400.woff2" as="font" type="font/woff2" crossorigin>
     <style>
         /* Base Styles */
         *{box-sizing:border-box}
@@ -271,30 +273,75 @@
             .hero p{font-size:.9em}
         }
     </style>
+    <link rel="stylesheet" href="amusement.css">
+    <script src="motion.js" defer></script>
+    <script src="form.js" defer></script>
 </head>
 <body>
+<svg class="illustration-library" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <symbol id="note-friend" viewBox="0 0 160 180">
+      <path d="M76 125V22c24 13 35 8 55 18v28C108 58 99 62 76 49" fill="currentColor" stroke="currentColor" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+      <ellipse cx="51" cy="133" rx="37" ry="29" transform="rotate(-18 51 133)" fill="currentColor"/>
+      <path d="M29 163l-4 10m39-13 9 9" fill="none" stroke="#24454b" stroke-width="7" stroke-linecap="round"/>
+      <circle cx="37" cy="131" r="3.5" fill="#24454b"/><circle cx="60" cy="126" r="3.5" fill="#24454b"/>
+      <path d="M45 139q9 8 15-3" fill="none" stroke="#24454b" stroke-width="3" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="piano-friend" viewBox="0 0 260 170">
+      <rect x="15" y="20" width="230" height="130" rx="24" fill="#24454b"/>
+      <circle cx="98" cy="42" r="4" fill="#fffdf5"/><circle cx="159" cy="42" r="4" fill="#fffdf5"/>
+      <path d="M120 42q8 10 16 0" stroke="#fffdf5" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <rect x="29" y="64" width="202" height="68" rx="6" fill="#fffdf5"/>
+      <path d="M58 66v65m29-65v65m29-65v65m29-65v65m29-65v65m29-65v65" stroke="#24454b" stroke-width="3"/>
+      <path d="M58 64v37m29-37v37m58-37v37m29-37v37m29-37v37" stroke="#24454b" stroke-width="14"/>
+      <path d="M56 151l-4 13m151-13 4 13" stroke="#24454b" stroke-width="7" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="sun-friend" viewBox="0 0 160 160">
+      <path d="M80 6v14m0 120v14M6 80h14m120 0h14M28 28l10 10m84 84 10 10M28 132l10-10m84-84 10-10" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
+      <circle cx="80" cy="80" r="44" fill="currentColor"/>
+      <circle cx="66" cy="74" r="4" fill="#24454b"/><circle cx="94" cy="74" r="4" fill="#24454b"/>
+      <path d="M67 90q13 15 26 0" fill="none" stroke="#24454b" stroke-width="4" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="music-notes" viewBox="0 0 100 100">
+      <path d="M37 74V25l43-9v52M37 38l43-9" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+      <ellipse cx="25" cy="77" rx="16" ry="10" transform="rotate(-18 25 77)" fill="currentColor"/><ellipse cx="68" cy="71" rx="16" ry="10" transform="rotate(-18 68 71)" fill="currentColor"/>
+    </symbol>
+    <symbol id="arrow-right" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+<a class="skip-link" href="#lesson">レッスン内容へ進む</a>
 
     <!-- Header -->
-    <header>
-        <div class="container">
-            <img src="image/logo.png" alt="ヤマハ音楽教室ロゴ" class="logo">
-            <p>音楽の力が一番伸びる時期に、最高の音楽教育を。4・5歳のための「ぷらいまりー」コース。</p>
-        </div>
-    </header>
+<header class="site-header" id="top">
+  <a href="#top" class="brand" aria-label="ヤマハ音楽教室 大津わにセンター トップ"><img src="image/logo.png" width="337" height="124" alt="ヤマハ音楽教室" class="logo"><span>大津わにセンター</span></a>
+  <nav class="header-nav" aria-label="ページ内ナビゲーション"><a href="#lesson">レッスン</a><a href="#fees">料金</a><a href="#application" class="header-trial">無料体験へ <span aria-hidden="true">↗</span></a></nav>
+  <button id="motion-toggle" type="button" aria-pressed="false" hidden>動きを止める</button>
+</header>
 
     <main>
-        <!-- Hero -->
-        <section class="hero">
-            <div class="container">
-                <h1>4歳・5歳は、耳の力がぐんと伸びる「聴覚の発達のゴールデンエイジ」。<br>この大切な時期に、豊かな音楽体験を。</h1>
-                <p>「きく」力が最も伸びるこの時期に、質の高い音楽を「きき」、それを「うたい」「ひく」経験を重ねることで、音楽の基礎となる力が自然に身につきます。将来のびやかな自己表現ができる力へとつながります。</p>
-                <img src="image/prm-08_dl.jpg" alt="4歳と5歳の子供たちが楽しそうに音楽を学ぶ様子" class="hero-image">
-            </div>
-        </section>
+<section class="hero" aria-labelledby="hero-title">
+  <picture class="hero-photo"><source type="image/webp" srcset="image/optimized/prm-08_dl-720.webp 720w, image/optimized/prm-08_dl-1800.webp 1800w" sizes="100vw"><img src="image/prm-08_dl.jpg" width="5408" height="3600" alt="先生のピアノに合わせて、楽しそうに歌う子どもたち" fetchpriority="high" decoding="async"></picture>
+  <div class="hero-copy">
+    <p class="hero-age"><span>4・5歳</span> 年中・年長のヤマハ音楽教室</p>
+    <h1 id="hero-title" class="hero-title" aria-label="ぷらいまりー"><span class="title-half" aria-hidden="true"><span>ぷ</span><span>ら</span><span>い</span></span><span class="title-half" aria-hidden="true"><span>ま</span><span>り</span><span>ー</span></span></h1>
+    <p class="hero-tagline">きいて、うたって、できた！<br class="mobile-break">音楽って、たのしい！</p>
+  </div>
+  <div class="hero-decoration" aria-hidden="true"><svg class="hero-note floaty"><use href="#note-friend"/></svg><svg class="hero-sun floaty"><use href="#sun-friend"/></svg><span class="hero-spark spark-one">✦</span><span class="hero-spark spark-two">✦</span></div>
+  <p class="hero-photo-note">写真はレッスンのイメージです。</p>
+  <div class="hero-dock">
+    <div class="hero-invite"><span class="eyebrow">はじめての音楽に、出会いにいこう。</span><p>まずは、親子で無料体験へ。</p></div>
+    <div class="hero-action"><a class="btn btn-form" href="#application">無料体験・見学を申し込む <svg aria-hidden="true"><use href="#arrow-right"/></svg></a><div class="hero-contact"><a href="https://lin.ee/uVpVQX3" target="_blank" rel="noopener">LINEで相談</a><a href="tel:0740-22-2063">電話で相談</a></div></div>
+  </div>
+</section>
+<div class="music-ribbon" aria-hidden="true"><div class="ribbon-track"><span>きく ♪ うたう ♪ ひく ♪ よむ ♪ つくる ♪</span><span>きく ♪ うたう ♪ ひく ♪ よむ ♪ つくる ♪</span><span>きく ♪ うたう ♪ ひく ♪ よむ ♪ つくる ♪</span></div></div>
+<section class="welcome-section">
+  <div class="container welcome-layout">
+    <div class="welcome-art" aria-hidden="true"><svg class="welcome-piano floaty"><use href="#piano-friend"/></svg><svg class="welcome-note floaty"><use href="#note-friend"/></svg><span class="welcome-dot"></span></div>
+    <div class="welcome-copy"><p class="eyebrow">「楽しい！」からはじまる、音楽のチカラ。</p><h2>お子さまの「やってみたい」を、<br>音楽でふくらませよう。</h2><p>「きく」力が最も伸びるこの時期に、質の高い音楽を「きき」、それを「うたい」「ひく」経験を重ねることで、音楽の基礎となる力が自然に身につきます。将来のびやかな自己表現ができる力へとつながります。</p><div class="welcome-links"><a href="#lesson">どんなレッスン？ <span aria-hidden="true">↓</span></a><a href="#fees">料金をみる <span aria-hidden="true">↓</span></a></div></div>
+  </div>
+</section>
 
-        <!-- CTA 1 -->
-       <!-- CTA 1 -->
-<section class="cta-section">
+<section class="cta-section" id="trial">
     <div class="container">
         <h2>さっそく、音楽の世界を体験してみませんか？</h2>
         <p>Webフォームまたはお電話で、お気軽に体験レッスン・見学をお申し込みください。</p>
@@ -302,72 +349,32 @@
         <!-- ★ 追加：キャンペーン訴求 -->
         <div class="campaign-banner">
             <p class="campaign-text">
-                🎉 今なら入会金 <span class="price-old">5,500円</span> →
+                <span class="campaign-label">11月30日まで</span> 入会金 <span class="price-old">5,500円</span> →
                 <span class="price-new">2,750円（50%OFF）</span>
             </p>
 
     <!-- ←ここに入れる -->
     <p style="font-size:0.9em; margin-top:8px;">
-        ※５月末までの期間限定
+        ※2026年11月30日までの期間限定
     </p>        </div>
 
         <div class="cta-buttons">
-            <a href="https://lin.ee/uVpVQX3" target="_blank" rel="noopener" class="btn btn-line">💬 LINEで質問・相談</a>
-            <a href="https://school.jp.yamaha.com/music/venue/detail/?id=204024940&courseClsCd=5&category=all" class="btn btn-form">📝 Webで体験レッスンを予約</a>
-            <a href="tel:0740-22-2063" class="btn btn-phone">📞 電話でお問い合わせ<span class="phone-note">(タップして発信)</span></a>
+            <a href="https://lin.ee/uVpVQX3" target="_blank" rel="noopener" class="btn btn-line">LINEで質問・相談</a>
+            <a href="#application" class="btn btn-form">無料体験・見学を予約する</a>
+            <a href="tel:0740-22-2063" class="btn btn-phone">電話でお問い合わせ<span class="phone-note">(タップして発信)</span></a>
         </div>
     </div>
 </section>
 
-        <!-- Why Choose -->
-        <section class="why-choose">
+<section class="course-details" id="lesson">
             <div class="container">
-                <h2>なぜ今、4・5歳で「ぷらいまりー」を選ぶべきなの？</h2>
-                <div class="content-grid">
-                    <div class="grid-item">
-                        <h3>耳の力が完成に近づく「ゴールデンエイジ」</h3>
-                        <p>4・5歳は、聴覚の発達が著しい時期。聞いた音楽を注意深く聴きわけたり、ドレミで歌ったりすることができるようになります。この大切な時期に合わせたレッスンで、音楽の力を最大限に引き出します。</p>
-                        <img src="image/prm-29_dl.jpg" alt="子供の聴覚発達イメージ">
-                    </div>
-                    <div class="grid-item">
-                        <h3>「弾く」だけじゃない、総合音楽力と「こころ」の成長</h3>
-                        <p>ヤマハでは「きく→うたう→ひく→よむ→つくる」という総合的なアプローチで、音楽を自分の言葉のように使いこなせる力を育みます。お友達とのアンサンブルを通して、協調性や社会性といった「非認知能力」も豊かに育ちます。</p>
-                        <img src="image/prm-18_dl.jpg" alt="友達とアンサンブルする子供たち">
-                    </div>
-                    <div class="grid-item">
-                        <h3>質の高い講師陣</h3>
-                        <p>ヤマハ独自の認定講師資格試験に合格し、幅広い音楽知識や、幼児とのコミュニケーション力に長けた講師が指導します。</p>
-                        <img src="image/prm-03_dl.jpg" alt="ヤマハ認定講師のイメージ">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Video -->
-        <section class="video-section">
-            <div class="container">
-                <h2>実際のレッスンの様子を動画でご覧ください</h2>
-                <div class="video-wrapper">
-                    <iframe width="560" height="315"
-    src="https://www.youtube.com/embed/7h1UTOnlK-g"
-    title="YouTube video player"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    referrerpolicy="strict-origin-when-cross-origin"
-    allowfullscreen>
-</iframe>
-                </div>
-            </div>
-        </section>
-
-        <!-- Course Details -->
-        <section class="course-details">
-            <div class="container">
-                <h2>「ぷらいまりー」（4・5歳コース）ってどんなレッスン？</h2>
+<p class="eyebrow chapter">01 / LESSON</p>
+<h2>音楽の楽しさ、まるごと。</h2>
+<p class="section-summary">「ぷらいまりー」（4・5歳コース）ってどんなレッスン？</p>
                 <ul>
                     <li>
                         <h3>対象年齢</h3>
-                        <p><strong>4歳（年中）・5歳（年長）</strong>。2026年度開講クラスは2020年4月2日～2022年4月1日生まれのお子様が対象です。</p>
+                        <p><strong>4歳（年中）・5歳（年長）</strong>。2026年度開講クラスは2020年4月2日〜2022年4月1日生まれのお子様が対象です。</p>
                     </li>
                     <li>
                         <h3>期間</h3>
@@ -382,32 +389,32 @@
                 <h3>ヤマハ独自の「きく→うたう→ひく→よむ→つくる」メソッド</h3>
                 <p>音楽を聴くだけでなく、歌い、弾き、楽譜を読み、そして簡単な作曲（つくる）まで体験することで、音楽を深く理解し、自分を表現する力を養います。</p>
                 <div class="method-grid">
-                    <div class="method-item"><h4>きく</h4></div>
-                    <div class="method-item"><h4>うたう</h4></div>
-                    <div class="method-item"><h4>ひく</h4></div>
-                    <div class="method-item"><h4>よむ</h4></div>
-                    <div class="method-item"><h4>つくる</h4></div>
+                    <div class="method-item"><svg class="method-icon" aria-hidden="true"><use href="#music-notes"/></svg><h4>きく</h4></div>
+                    <div class="method-item"><svg class="method-icon" aria-hidden="true"><use href="#note-friend"/></svg><h4>うたう</h4></div>
+                    <div class="method-item"><svg class="method-icon" aria-hidden="true"><use href="#piano-friend"/></svg><h4>ひく</h4></div>
+                    <div class="method-item"><svg class="method-icon" aria-hidden="true"><use href="#music-notes"/></svg><h4>よむ</h4></div>
+                    <div class="method-item"><svg class="method-icon" aria-hidden="true"><use href="#sun-friend"/></svg><h4>つくる</h4></div>
                 </div>
 
                 <h3>レッスン内容の具体例</h3>
                 <div class="lesson-content-grid">
                     <div class="lesson-content-item">
-                        <img src="image/prm-10_dl.jpg" alt="ソルフェージュのアイコン">
+                        <picture><source type="image/webp" srcset="image/optimized/prm-10_dl-720.webp 720w, image/optimized/prm-10_dl-1800.webp 1800w" sizes="(max-width:768px) 100vw, (max-width:1100px) 50vw, 560px"><img src="image/prm-10_dl.jpg" alt="ソルフェージュのアイコン" loading="lazy" decoding="async"></picture>
                         <h4>きく・うたう（ソルフェージュ）</h4>
                         <p>ドレミで歌うことで音感を育て、先生の伴奏を聴いて歌うことでハーモニー感覚を養います。</p>
                     </div>
                     <div class="lesson-content-item">
-                        <img src="image/prm-19_dl.jpg" alt="アンサンブルのアイコン">
+                        <picture><source type="image/webp" srcset="image/optimized/prm-19_dl-720.webp 720w, image/optimized/prm-19_dl-1800.webp 1800w" sizes="(max-width:768px) 100vw, (max-width:1100px) 50vw, 560px"><img src="image/prm-19_dl.jpg" alt="アンサンブルのアイコン" loading="lazy" decoding="async"></picture>
                         <h4>ひく（アンサンブル）</h4>
                         <p>お友達と一緒にエレクトーンでアンサンブル。リズム感や協調性が自然と身につきます。</p>
                     </div>
                     <div class="lesson-content-item">
-                        <img src="image/prm-04_dl.jpg" alt="鑑賞のアイコン">
+                        <picture><source type="image/webp" srcset="image/optimized/prm-04_dl-720.webp 720w, image/optimized/prm-04_dl-1800.webp 1800w" sizes="(max-width:768px) 100vw, (max-width:1100px) 50vw, 560px"><img src="image/prm-04_dl.jpg" alt="鑑賞のアイコン" loading="lazy" decoding="async"></picture>
                         <h4>鑑賞</h4>
                         <p>オーケストラの曲など、さまざまな音楽を聴き、イメージを広げ、感受性を豊かにします。</p>
                     </div>
                     <div class="lesson-content-item">
-                        <img src="image/prm-10_dl.jpg" alt="楽譜読みのアイコン">
+                        <picture><source type="image/webp" srcset="image/optimized/prm-10_dl-720.webp 720w, image/optimized/prm-10_dl-1800.webp 1800w" sizes="(max-width:768px) 100vw, (max-width:1100px) 50vw, 560px"><img src="image/prm-10_dl.jpg" alt="楽譜読みのアイコン" loading="lazy" decoding="async"></picture>
                         <h4>よむ</h4>
                         <p>歌ったり弾いたりした曲を楽譜で確認。体験と楽譜を結びつけ、読譜力を育てます。</p>
                     </div>
@@ -445,8 +452,7 @@
             </div>
         </section>
 
-        <!-- Forms -->
-        <section class="lesson-forms">
+<section class="lesson-forms">
             <div class="container">
                 <h2>お友達と一緒だから楽しい！グループレッスン</h2>
                 <div class="form-option">
@@ -459,44 +465,105 @@
             </div>
         </section>
 
-        <!-- Support -->
-        <section class="support-section">
+<section class="music-play-section" aria-labelledby="music-play-title">
+  <div class="container">
+    <div class="play-heading"><p class="eyebrow">お子さまと一緒に、ひと遊び。</p><h2 id="music-play-title">ぽんっ、とタップ。<br>ちいさな音楽あそび。</h2><p>鍵盤を押すと、音符がぴょん！<br>音を鳴らしたいときは「音を出す」を押してね。</p></div>
+    <div class="music-toy" id="music-play">
+      <div class="toy-top"><svg class="music-character" aria-hidden="true"><use href="#note-friend"/></svg><p id="music-status" aria-live="polite" aria-atomic="true">どの音にする？</p><button id="sound-toggle" type="button" aria-pressed="false">音を出す</button></div>
+      <div class="toy-keyboard" role="group" aria-label="タップして遊べる7つの鍵盤">
+        <button type="button" data-note="C4" aria-label="ドの音を鳴らす"><span>ド</span></button><button type="button" data-note="D4" aria-label="レの音を鳴らす"><span>レ</span></button><button type="button" data-note="E4" aria-label="ミの音を鳴らす"><span>ミ</span></button><button type="button" data-note="F4" aria-label="ファの音を鳴らす"><span>ファ</span></button><button type="button" data-note="G4" aria-label="ソの音を鳴らす"><span>ソ</span></button><button type="button" data-note="A4" aria-label="ラの音を鳴らす"><span>ラ</span></button><button type="button" data-note="B4" aria-label="シの音を鳴らす"><span>シ</span></button>
+      </div>
+      <div class="toy-bubbles" aria-hidden="true"><span class="music-bubble">♪</span><span class="music-bubble">♫</span><span class="music-bubble">♪</span></div>
+    </div>
+    <p class="play-note">この鍵盤は、ページ内の音あそびです。レッスンの雰囲気は、下の動画や無料体験でご覧ください。</p>
+    <noscript><p class="play-note">音あそびはJavaScriptを有効にすると楽しめます。</p></noscript>
+    <a href="#application" class="play-trial-link">教室でも、音楽にふれてみよう <span aria-hidden="true">↗</span></a>
+  </div>
+</section>
+
+<section class="video-section">
             <div class="container">
-                <h2>ご家庭でのサポートと保護者の皆様へ</h2>
-                <div class="support-item">
-                    <img src="image/prm-24_dl.jpg" alt="保護者同伴のアイコン">
-                    <div>
-                        <h3>保護者の同伴について</h3>
-                        <p>レッスンには保護者の方にもご同伴いただきます。お子様の成長を間近で見守り、ご家庭での練習もサポートしていただくことで、お子様の意欲と上達につながります。</p>
-                    </div>
+<p class="eyebrow chapter">PLAY MOVIE</p>
+<h2>教室の「たのしい」を、のぞいてみよう。</h2>
+<p class="section-summary">実際のレッスンの様子を動画でご覧ください</p>
+                <div class="video-wrapper">
+                    <iframe width="560" height="315"
+    src="https://www.youtube.com/embed/7h1UTOnlK-g" loading="lazy"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen>
+</iframe>
                 </div>
-                <div class="support-item">
-                    <img src="image/feature04.png" alt="家庭学習サポートのアイコン">
-                    <div>
-                        <h3>充実した家庭学習サポート</h3>
-                        <p>レッスンで習った曲を繰り返し聴けるDVDや、ご家庭での練習をサポートする教材をご用意しています。音楽に親しむ習慣が、お子様の力を大きく伸ばします。</p>
+            </div>
+        </section>
+
+<section class="why-choose" id="why">
+            <div class="container">
+<p class="eyebrow chapter">02 / GROWTH</p>
+<h2>耳の力が伸びる、いまだから。</h2>
+<p class="section-summary">なぜ今、4・5歳で「ぷらいまりー」を選ぶべきなの？</p>
+                <div class="content-grid">
+                    <div class="grid-item">
+                        <h3>耳の力が完成に近づく「ゴールデンエイジ」</h3>
+                        <p>4・5歳は、聴覚の発達が著しい時期。聞いた音楽を注意深く聴きわけたり、ドレミで歌ったりすることができるようになります。この大切な時期に合わせたレッスンで、音楽の力を最大限に引き出します。</p>
+                        <picture><source type="image/webp" srcset="image/optimized/prm-29_dl-720.webp 720w, image/optimized/prm-29_dl-1800.webp 1800w" sizes="(max-width:768px) 100vw, (max-width:1100px) 50vw, 560px"><img src="image/prm-29_dl.jpg" alt="子供の聴覚発達イメージ" loading="lazy" decoding="async"></picture>
+                    </div>
+                    <div class="grid-item">
+                        <h3>「弾く」だけじゃない、総合音楽力と「こころ」の成長</h3>
+                        <p>ヤマハでは「きく→うたう→ひく→よむ→つくる」という総合的なアプローチで、音楽を自分の言葉のように使いこなせる力を育みます。お友達とのアンサンブルを通して、協調性や社会性といった「非認知能力」も豊かに育ちます。</p>
+                        <picture><source type="image/webp" srcset="image/optimized/prm-18_dl-720.webp 720w, image/optimized/prm-18_dl-1800.webp 1800w" sizes="(max-width:768px) 100vw, (max-width:1100px) 50vw, 560px"><img src="image/prm-18_dl.jpg" alt="友達とアンサンブルする子供たち" loading="lazy" decoding="async"></picture>
+                    </div>
+                    <div class="grid-item">
+                        <h3>質の高い講師陣</h3>
+                        <p>ヤマハ独自の認定講師資格試験に合格し、幅広い音楽知識や、幼児とのコミュニケーション力に長けた講師が指導します。</p>
+                        <picture><source type="image/webp" srcset="image/optimized/prm-03_dl-720.webp 720w, image/optimized/prm-03_dl-1800.webp 1800w" sizes="(max-width:768px) 100vw, (max-width:1100px) 50vw, 560px"><img src="image/prm-03_dl.jpg" alt="ヤマハ認定講師のイメージ" loading="lazy" decoding="async"></picture>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Course Summary (Tabs) -->
-        <section class="course-summary-section">
+<section class="support-section">
             <div class="container">
-                <h2>コース概要・料金</h2>
-                <div class="tabs">
+<p class="eyebrow chapter">03 / SUPPORT</p>
+<h2>おうちでも、親子で音楽を。</h2>
+<p class="section-summary">ご家庭でのサポートと保護者の皆様へ</p>
+                <div class="support-item">
+                    <picture><source type="image/webp" srcset="image/optimized/prm-24_dl-720.webp 720w, image/optimized/prm-24_dl-1800.webp 1800w" sizes="(max-width:768px) 100vw, (max-width:1100px) 50vw, 560px"><img src="image/prm-24_dl.jpg" alt="保護者同伴のアイコン" loading="lazy" decoding="async"></picture>
+                    <div>
+                        <h3>保護者の同伴について</h3>
+                        <p>ぷらいまりー2の前半は、保護者の方も一緒にレッスンへ。後半からはお子さまの自立を意識したレッスンへ移り、ぷらいまりー3からの同伴は任意です。ご家庭でのサポートも、お子さまの意欲につながります。</p>
+                    </div>
+                </div>
+                <div class="support-item">
+                    <img src="image/feature04.png" loading="lazy" width="560" height="347" alt="家庭学習サポートのアイコン">
+                    <div>
+                        <h3>充実した家庭学習サポート</h3>
+                        <p>教材の音源や動画を視聴できる専用サイトLMS「ミューナビ」が、ご家庭での音楽体験をサポートします。お手本を聴いたり、動画を見たりしながら、親子で音楽に親しめます。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<section class="course-summary-section" id="fees">
+            <div class="container">
+<p class="eyebrow chapter">04 / COURSE & FEE</p>
+<h2>コースと料金を、しっかり確認。</h2>
+<p class="section-summary">コース概要・料金</p>
+                <div class="tabs" role="tablist" aria-label="コースを選ぶ">
                     <button class="tab-link active" data-tab="primary">ぷらいまりー</button>
                     <button class="tab-link" data-tab="primary-personal">ぷらいまりー（パーソナル）</button>
                 </div>
 
                 <div class="tab-content">
                     <!-- ぷらいまりー -->
-                    <div id="primary" class="tab-pane active">
+                    <div id="primary" class="tab-pane active" role="tabpanel">
                         <div class="detail-row">
                             <div class="detail-label">対象年齢</div>
                             <div class="detail-content">
                                 <p><strong>4・5歳（年中・年長）</strong></p>
-                                <p class="note">&lt;2026年度開講クラス&gt; 2020.4.2～2022.4.1生まれ</p>
+                                <p class="note">&lt;2026年度開講クラス&gt; 2020.4.2〜2022.4.1生まれ</p>
                             </div>
                         </div>
                         <div class="detail-row">
@@ -507,7 +574,7 @@
                             <div class="detail-label">レッスン形態<br><span class="label-sub">(推奨)</span></div>
                             <div class="detail-content">
                                 <p><strong>グループ レッスン + 個人 レッスン</strong></p>
-                                <p class="note">グループレッスン：月3回 / 個人レッスン：月0回～3回より選択</p>
+                                <p class="note">グループレッスン：月3回 / 個人レッスン：月0回〜3回より選択</p>
                                 <p class="note">※「グループ＋個人月1回」を推奨。回数はご希望に応じて選択可能です。</p>
                             </div>
                         </div>
@@ -523,9 +590,9 @@
                             <div class="detail-content">
                                 <ul class="price-list">
                                     <li><span>グループのみ:</span><strong>7,700円</strong> または <strong>8,250円</strong></li>
-                                    <li><span>グループ + 個人月1回:</span><strong>9,680円 ～ 10,560円</strong></li>
-                                    <li><span>グループ + 個人月2回:</span><strong>11,660円 ～ 12,540円</strong></li>
-                                    <li><span>グループ + 個人月3回:</span><strong>13,640円 ～ 14,740円</strong></li>
+                                    <li><span>グループ + 個人月1回:</span><strong>9,680円 〜 10,560円</strong></li>
+                                    <li><span>グループ + 個人月2回:</span><strong>11,660円 〜 12,540円</strong></li>
+                                    <li><span>グループ + 個人月3回:</span><strong>13,640円 〜 14,740円</strong></li>
                                 </ul>
                                 <p class="note">※レッスン料は平日・土日で異なります。専用サイト(LMS)利用料を含む。CDの販売はありません。</p>
                             </div>
@@ -535,11 +602,11 @@
                             <div class="detail-content">
                                 <div class="materials-grid">
                                     <div class="material-item">
-                                        <img src="image/overview_photo_01.png" alt="テキストの画像">
+                                        <img src="image/overview_photo_01.png" loading="lazy" width="320" height="198" alt="テキストの画像">
                                         <p>テキスト<strong> 2,640円</strong></p>
                                     </div>
                                     <div class="material-item">
-                                        <img src="image/bagoverview_photo_02.png" alt="レッスンバッグの画像">
+                                        <img src="image/bagoverview_photo_02.png" loading="lazy" width="320" height="198" alt="レッスンバッグの画像">
                                         <p>レッスンバッグ <strong>2,200円</strong></p>
                                     </div>
                                 </div>
@@ -549,7 +616,7 @@
                         <div class="detail-row">
                             <div class="detail-label">入会金・施設費</div>
                             <div class="detail-content">
-                                <p>入会金：5,500円<br>施設費：<strong>770円</strong> (月額)</p>
+                                <p>入会金：通常5,500円 → <strong>2,750円</strong><br><span class="note">2026年11月30日まで半額</span><br>施設費：<strong>770円</strong> (月額)</p>
                             </div>
                         </div>
                         <div class="detail-row">
@@ -561,12 +628,12 @@
                     </div>
 
                     <!-- ぷらいまりー（パーソナル） -->
-                    <div id="primary-personal" class="tab-pane">
+                    <div id="primary-personal" class="tab-pane" role="tabpanel">
                         <div class="detail-row">
                             <div class="detail-label">対象年齢</div>
                             <div class="detail-content">
                                 <p><strong>4・5歳（年中・年長）</strong></p>
-                                <p class="note">※2020年4月2日～2022年4月1日生まれ</p>
+                                <p class="note">※2020年4月2日〜2022年4月1日生まれ</p>
                             </div>
                         </div>
                         <div class="detail-row">
@@ -596,11 +663,11 @@
                             <div class="detail-content">
                                 <div class="materials-grid">
                                     <div class="material-item">
-                                        <img src="image/overview_photo_01.png" alt="テキストの画像">
+                                        <img src="image/overview_photo_01.png" loading="lazy" width="320" height="198" alt="テキストの画像">
                                         <p>テキスト <strong>2,640円</strong></p>
                                     </div>
                                     <div class="material-item">
-                                        <img src="image/bagoverview_photo_02.png" alt="レッスンバッグの画像">
+                                        <img src="image/bagoverview_photo_02.png" loading="lazy" width="320" height="198" alt="レッスンバッグの画像">
                                         <p>レッスンバッグ <strong>2,200円</strong></p>
                                     </div>
                                 </div>
@@ -609,7 +676,7 @@
                         <div class="detail-row">
                             <div class="detail-label">入会金・施設費</div>
                             <div class="detail-content">
-                                <p>入会金：5,500円<br>施設費：<strong>770円</strong> (月額)</p>
+                                <p>入会金：通常5,500円 → <strong>2,750円</strong><br><span class="note">2026年11月30日まで半額</span><br>施設費：<strong>770円</strong> (月額)</p>
                             </div>
                         </div>
                         <div class="detail-row">
@@ -623,10 +690,10 @@
             </div>
         </section>
 
-        <!-- Testimonials -->
-        <section class="testimonials-section">
+<section class="testimonials-section">
             <div class="container">
-                <h2>実際に通われている保護者の皆様の声</h2>
+<p class="eyebrow chapter">PARENTS’ VOICE</p>
+<h2>実際に通われている保護者の皆様の声</h2>
                 <div class="testimonials-grid">
                     <div class="testimonial-card">
                         <p class="quote">初めは恥ずかしがっていましたが、お友達とアンサンブルをするのが楽しいようで、今では毎週のレッスンを心待ちにしています。家でもドレミで歌うことが増えました。</p>
@@ -644,23 +711,23 @@
             </div>
         </section>
 
-        <!-- CTA 2 -->
-        <section class="cta-section">
+<section class="cta-section">
             <div class="container">
                 <h2>料金や内容にご納得いただけましたら、<br>ぜひ一度、教室の雰囲気を見に来てください！</h2>
             <p>Webフォームまたはお電話で、お気軽に体験レッスン・見学をお申し込みください。</p>
                 <div class="cta-buttons">
-                    <a href="https://lin.ee/uVpVQX3" target="_blank" rel="noopener" class="btn btn-line">💬 LINEで質問・相談</a>
-                    <a href="https://school.jp.yamaha.com/music/venue/detail/?id=204024940&courseClsCd=5&category=all/" class="btn btn-form">📝 Webで体験レッスンを予約</a>
-                    <a href="tel:0740-22-2063" class="btn btn-phone">📞 電話でお問い合わせ<span class="phone-note">(タップして発信)</span></a>
+                    <a href="https://lin.ee/uVpVQX3" target="_blank" rel="noopener" class="btn btn-line">LINEで質問・相談</a>
+                    <a href="#application" class="btn btn-form">無料体験・見学を予約する</a>
+                    <a href="tel:0740-22-2063" class="btn btn-phone">電話でお問い合わせ<span class="phone-note">(タップして発信)</span></a>
                 </div>
             </div>
         </section>
 
-        <!-- FAQ -->
-        <section class="faq-section">
+<section class="faq-section">
             <div class="container">
-                <h2>よくある質問（FAQ）</h2>
+<p class="eyebrow chapter">05 / QUESTIONS</p>
+<h2>はじめる前の、気になること。</h2>
+<p class="section-summary">よくある質問（FAQ）</p>
 
                 <div class="faq-item">
                     <div class="faq-question" role="button" tabindex="0">楽器の経験が全くありませんが、大丈夫ですか？</div>
@@ -679,7 +746,7 @@
                 <div class="faq-item">
                     <div class="faq-question" role="button" tabindex="0">宿題はありますか？</div>
                     <div class="faq-answer">
-                        <p>ご家庭で教材のDVDを見たり、CDを聴いたり、レッスンで習った曲を少し弾いてみる、といった簡単な「復習」をお願いしています。ご家庭で音楽に触れる時間を持つことが、お子様の成長を大きく後押しします。</p>
+                        <p>ご家庭で専用サイトLMS「ミューナビ」の音源や動画を楽しんだり、レッスンで習った曲を少し弾いてみる、といった「復習」をお願いしています。ご家庭で音楽に触れる時間を持つことが、お子様の成長を大きく後押しします。</p>
                     </div>
                 </div>
 
@@ -693,23 +760,24 @@
                 <div class="faq-item">
                     <div class="faq-question" role="button" tabindex="0">レッスンに保護者の付き添いは必要ですか？</div>
                     <div class="faq-answer">
-                        <p>はい、このコースでは保護者の方にご同伴いただいています。お子様が安心してレッスンに集中できるだけでなく、保護者の方にもレッスンの内容をご理解いただくことで、ご家庭での練習がよりスムーズになります。お子様の成長を一緒に見守り、喜びを分-ち合える貴重な時間となります。</p>
+                        <p>ぷらいまりー2の前半は保護者の方にご同伴いただきます。後半からはお子さまの自立を意識したレッスンに移り、ぷらいまりー3からの同伴は任意です。はじめの時期は一緒に音楽を楽しみ、お子さまの成長を見守っていただけます。</p>
                     </div>
                 </div>
 
-                <div class="faq-link" style="text-align:center;margin-top:30px;">
-                    <a href="https://school.jp.yamaha.com/music/faq/" class="btn btn-form" style="border-radius:8px;">その他のよくある質問はこちら</a>
+                <div class="faq-link">
+                    <a href="https://school.jp.yamaha.com/music/faq/" class="faq-external-link">その他のよくある質問はこちら</a>
                 </div>
             </div>
         </section>
 
-        <!-- Access -->
-        <section class="access-section">
+<section class="access-section" id="access">
             <div class="container">
-                <h2>教室のご案内</h2>
+<p class="eyebrow chapter">06 / ACCESS</p>
+<h2>和邇駅から徒歩1分。</h2>
+<p class="section-summary">教室のご案内</p>
                 <div class="access-card">
                     <div class="access-image">
-                        <img src="http://toriimusic.co.jp/wp/wp-content/uploads/2018/10/1450601834883-300x225.jpg" alt="大津わにセンターの外観">
+                        <img src="image/wani-center.jpg" loading="lazy" width="300" height="225" alt="大津わにセンターの外観">
                     </div>
                     <div class="access-info">
                         <h3>大津わにセンター</h3>
@@ -723,37 +791,114 @@
                             <dd>JR湖西線 和邇駅より徒歩1分<br><span class="highlight">駐車場</span>：あり</dd>
                             <dt>電話番号</dt>
                             <dd>0740-22-2063</dd>
+<dt>教室情報</dt><dd><a href="https://school.jp.yamaha.com/music/venue/detail/?id=204024940&courseClsCd=5&category=all" target="_blank" rel="noopener noreferrer">ヤマハ公式の教室案内を見る</a></dd>
                         </dl>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- CTA Bottom -->
-        <section class="cta-section cta-bottom">
+<section id="application" class="application-section" aria-labelledby="application-title">
+  <div class="container application-inner">
+    <div class="application-copy">
+      <p class="section-kicker">無料体験・見学のお申し込み</p>
+      <h2 id="application-title">まずは、親子で音楽体験へ。</h2>
+      <p>体験・見学は無料です。はじめての方も、お気軽にお申し込みください。</p>
+      <p class="application-fixed">会場：大津わにセンター<br>コース：ぷらいまりー（4・5歳）</p>
+      <p class="application-note">送信後、教室から体験・見学日時をご案内します。送信時点では予約は確定しません。</p>
+    </div>
+
+    <form id="application-form" class="application-form" action="https://formspree.io/f/xzedrgyz" method="POST">
+      <input type="hidden" name="venue" value="大津わにセンター">
+      <input type="hidden" name="course" value="ぷらいまりー（4・5歳）">
+      <input type="hidden" name="_subject" value="【ぷらいまりー4・5歳】無料体験・見学申込">
+      <input type="hidden" name="source" value="primary45">
+
+      <p class="form-required-note">必須の項目をご入力ください。</p>
+      <div class="form-field">
+        <label for="guardian-name">保護者のお名前 <span aria-hidden="true">*</span></label>
+        <input id="guardian-name" name="guardian_name" type="text" autocomplete="name" maxlength="80" required>
+      </div>
+      <div class="form-field">
+        <label for="child-name">お子さまのお名前 <span aria-hidden="true">*</span></label>
+        <input id="child-name" name="child_name" type="text" autocomplete="off" maxlength="80" required>
+      </div>
+      <div class="form-field">
+        <label for="child-grade">お子さまの学年 <span aria-hidden="true">*</span></label>
+        <select id="child-grade" name="child_grade" required>
+          <option value="">選択してください</option>
+          <option value="年中（4歳）">年中（4歳）</option>
+          <option value="年長（5歳）">年長（5歳）</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label for="application-email">メールアドレス <span aria-hidden="true">*</span></label>
+        <input id="application-email" name="email" type="email" autocomplete="email" maxlength="254" required>
+      </div>
+      <div class="form-field">
+        <label for="application-phone">電話番号 <span class="optional">任意</span></label>
+        <input id="application-phone" name="phone" type="tel" autocomplete="tel" maxlength="50">
+      </div>
+      <div class="form-field">
+        <label for="request-type">希望内容 <span aria-hidden="true">*</span></label>
+        <select id="request-type" name="request_type" required>
+          <option value="">選択してください</option>
+          <option value="無料体験レッスン">無料体験レッスン</option>
+          <option value="レッスン見学">レッスン見学</option>
+          <option value="まずは相談">まずは相談</option>
+        </select>
+      </div>
+      <div class="form-field form-field-wide">
+        <label for="preferred-schedule">希望曜日・時間 <span class="optional">任意</span></label>
+        <input id="preferred-schedule" name="preferred_schedule" type="text" maxlength="120" placeholder="例：平日の午後、土曜日など">
+      </div>
+      <div class="form-field form-field-wide">
+        <label for="application-message">質問・ご要望 <span class="optional">任意</span></label>
+        <textarea id="application-message" name="message" maxlength="1500" rows="5"></textarea>
+      </div>
+      <div class="form-field form-field-wide privacy-field">
+        <label class="checkbox-label" for="privacy-consent">
+          <input id="privacy-consent" name="privacy_consent" type="checkbox" value="同意する" required>
+          <span><a href="https://www.toriimusic.co.jp/privacy_policy/" target="_blank" rel="noopener noreferrer">個人情報保護方針</a>を確認し、個人情報の取り扱いに同意する</span>
+        </label>
+      </div>
+
+      <button id="application-submit" class="application-submit" type="submit">無料体験・見学を申し込む</button>
+    </form>
+    <p id="form-status" class="form-status" role="status" aria-live="polite" tabindex="-1"></p>
+    <p class="form-alternates"><a href="https://lin.ee/uVpVQX3" target="_blank" rel="noopener noreferrer">公式LINEで相談</a> · <a href="tel:0740-22-2063">電話で相談</a></p>
+    <div id="form-success" class="form-success" role="status" aria-live="polite" tabindex="-1" hidden>
+      <p>お申し込みを受け付けました。教室からのご連絡をお待ちください。</p>
+      <p><a href="#top">ページ上部へ戻る</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section cta-bottom">
             <div class="container">
                 <h2>まずはお子様の可能性を体験！</h2>
                 <div class="cta-buttons">
-                    <a href="https://lin.ee/uVpVQX3" target="_blank" rel="noopener" class="btn btn-line">💬 LINEで質問・相談</a>
-                    <a href="https://school.jp.yamaha.com/music/venue/detail/?id=204024940&courseClsCd=5&category=all/" class="btn btn-form">📝 無料体験レッスン・レッスン見学を予約する</a>
+                    <a href="https://lin.ee/uVpVQX3" target="_blank" rel="noopener" class="btn btn-line">LINEで質問・相談</a>
+                    <a href="#application" class="btn btn-form">無料体験・見学を予約する</a>
                 </div>
-                <p style="margin-top:16px;">無料体験レッスン・レッスン見学 プレゼントキャンペーン実施中！</p>
+                <p class="gift-note">無料体験レッスン・レッスン見学 プレゼントキャンペーン実施中！</p>
             </div>
         </section>
-    </main>
+</main>
 
     <footer>
         <div class="container">
+            <p>ヤマハ音楽教室 大津わにセンター / 株式会社トリイ</p>
             <p>&copy; 2026 Yamaha Music School. All Rights Reserved.</p>
         </div>
     </footer>
 
     <!-- Sticky CTA (mobile only) -->
-    <div class="sticky-cta" id="stickyCta" aria-hidden="true">
+    <div class="sticky-cta" id="stickyCta" aria-hidden="true" inert>
         <div class="container">
-            <div class="sticky-cta-inner">
-                <a href="https://lin.ee/uVpVQX3" target="_blank" rel="noopener" class="sticky-btn sticky-btn--line" aria-label="LINEで質問・相談">💬 LINEで質問・相談</a>
-                <a href="tel:0740-22-2063" class="sticky-btn sticky-btn--tel" aria-label="電話で問い合わせ">📞 電話</a>
+            <div class="sticky-cta-inner"><a href="#application" class="sticky-btn sticky-btn--reserve">無料体験・見学 <span aria-hidden="true">↗</span></a>
+                <a href="https://lin.ee/uVpVQX3" target="_blank" rel="noopener" class="sticky-btn sticky-btn--line" aria-label="LINEで質問・相談">LINEで質問・相談</a>
+                <a href="tel:0740-22-2063" class="sticky-btn sticky-btn--tel" aria-label="電話で問い合わせ">電話</a>
             </div>
         </div>
     </div>
